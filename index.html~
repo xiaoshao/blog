@@ -2,9 +2,10 @@
 <html>
 <head>
 <title>Jichao Ouyang's Blog</title>
-<!-- 2015-02-27 Fri 07:26 -->
+<!-- 2015-02-26 Thu 00:08 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
+<meta  name="author" content="Jichao Ouyang">
 <link rel="stylesheet" href="/style/worg.css" />
 <script type="text/javascript">
 /*
@@ -63,21 +64,24 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>emacs
 <ul class="org-ul">
-<li><a href="emacs/Literal Programming Emacs Config.html">Literal Programming Emacs Config (2015-02-27)</a>
+<li><a href="emacs/Literal Programming Emacs Config.html">Literal Programming Emacs Config (2015-02-25)</a>
 </li>
 </ul>
 </li>
 <li>clojure
 <ul class="org-ul">
-<li><a href="clojure/试试Clojure.html">试试Clojure (2015-02-27)</a>
+<li><a href="clojure/试试Clojure.html">试试Clojure (2015-02-26)</a>
 </li>
 </ul>
+</li>
+<li><a href="file:///Users/twer/Dropbox/blog/org/~jcouyang.html">~jcouyang (2015-02-26)</a>
 </li>
 </ul>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2015-02-27 Fri 07:26</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="author">Author: Jichao Ouyang</p>
+<p class="date">Created: 2015-02-26 Thu 00:08</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"></p>
 </div>
 </body>

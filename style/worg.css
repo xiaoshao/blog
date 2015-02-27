@@ -184,7 +184,8 @@ content: "*** "
 
     img {
 	      border: none;
-        max-width: 90%;
+        max-width: 700px;
+        max-height: 700px;
     }
 
     .share img {
