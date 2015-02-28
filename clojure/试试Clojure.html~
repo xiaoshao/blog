@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>试试Clojure</title>
-<!-- 2015-02-28 Sat 07:25 -->
+<!-- 2015-02-28 Sat 23:19 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -499,10 +499,30 @@ clojure是怎么做到的呢. 事实上lisp是非常简单的语言.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Jichao Ouyang</p>
-<p class="date">Created: 2015-02-28 Sat 07:25</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
-<p class="validation"></p>
+<p>Author: Jichao Ouyang</p>
+<p>Modified: 2015-02-28 Sat 10:57</p>
+<p><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'orgblog';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','eGLqWnAM75a66SiXKVW3');
+</script>
 </div>
 </body>
 </html>
