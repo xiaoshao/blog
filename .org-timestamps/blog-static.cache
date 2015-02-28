@@ -1,0 +1,4 @@
+(setq org-publish-cache (make-hash-table :test 'equal :weakness nil :size 100))
+(puthash ":project:" "blog-static" org-publish-cache)
+(puthash ":cache-file:" "/home/travis/build/jcouyang/blog/public/.org-timestamps/blog-static.cache" org-publish-cache)
+(puthash "Xaa3b3e2e7ab82e068b91551380e265d952a21110" "788a1bcaa462f69db6fb31fecf75d7d4" org-publish-cache)
