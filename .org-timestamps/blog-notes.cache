@@ -6,6 +6,6 @@
 (puthash "/home/travis/build/jcouyang/blog/org/make Bamboo support Github Pull Request with Status API.org" '(:title "make Bamboo support Github Pull Request with Status API" :numbering ((("what's" "wrong" "with" "Bamboo") 1) (("bamboo" "magic") 2) (("github" "webhook") 3) (("but" "what" "about" "the" "custom" "variables") 4) (("config" "Bamboo" "plan") 5) (("checkout" "PR" "code") 5 1) (("notify" "github" "status") 5 2) (("stop" "build" "if" "PR") 5 3)) :index nil) org-publish-cache)
 (puthash "Xaf3d12b83ad493105ac5217283143005aa9cca9e" "9e72b37d61c50f1c1ce98f4093a5c69c" org-publish-cache)
 (puthash "X74b97857dd76943f0000470024a9ba89851c8017" "9b1764d4d674e4dbf6ffa4440d6df7ae" org-publish-cache)
-(puthash "X6527f683883fb90af51b191153840bd8fcf39bb5" "535e0f11051bcf5f1673ea4a66a1aac5" org-publish-cache)
+(puthash "X6527f683883fb90af51b191153840bd8fcf39bb5" "b547242016af28e12573ea4346af596d" org-publish-cache)
 (puthash "/home/travis/build/jcouyang/blog/org/index" '(:numbering nil :index nil) org-publish-cache)
 (puthash "X1a430d10ccba4df8c2dbbe07c3fd5cbc05262ff5" "c0c09dfb8e7a793aaa8e1c21445c8dee" org-publish-cache)
