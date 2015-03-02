@@ -2,14 +2,14 @@
 <html>
 <head>
 <title>Literal Programming Emacs Config</title>
-<!-- 2015-02-28 Sat 23:19 -->
+<!-- 2015-02-28 Sat 17:02 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
 <meta  name="description" content="用文学编程配置emacs"
 >
 <meta  name="keywords" content="emacs,LP,Literal Programming,lisp,emacs config">
-<link rel="stylesheet" href="/style/worg.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style/worg.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -2539,8 +2539,8 @@ For some reason this didn't work with <code>setq</code> so I had to use <code>cu
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-02-28 Sat 15:28</p>
-<p><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p>Modified: 2015-02-28 Sat 17:02</p>
+<p><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
