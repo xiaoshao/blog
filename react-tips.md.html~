@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>react-tips.md</title>
+<!-- 2015-03-04 Wed 15:59 -->
+<meta  charset="utf-8">
+<meta  name="generator" content="Org-mode">
+<meta  name="author" content="Jichao Ouyang">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style/worg.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/index.html"> UP </a>
+ |
+ <a accesskey="H" href="https://oyanglul.us/~jichao.ouyang.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">react-tips.md</h1>
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">React Tips</a>
+<ul>
+<li><a href="#sec-1-1">[[</a></li>
+<li><a href="#sec-1-2">PureRenderMixin</a></li>
+<li><a href="#sec-1-3">flow static type</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">React Tips</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">[[<a href="http://facebook.github.io/react/docs/reusable-components.html#prop-validation][Prop">http://facebook.github.io/react/docs/reusable-components.html#prop-validation][Prop</a></h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Validation]]
+</p>
+
+<p>
+如果把每个Component想象成一个函数，那么props就是这个函数的参数。在有类型检查的语言中，很容易在编译期间就可以对参数类型检
+查来避免一些不必要的错误。
+</p>
+
+<p>
+javascript没有类型检查，但是我们仍然能筒高React的Prop
+Validation在运行期间检查props的类型。
+</p>
+
+<p>
+只需要在Component声明里加上
+<code>javascript propTypes: {   aProperty: React.PropTypes.any.isRequired   ... }</code>
+###Prop shortcut
+一个嵌套多层的Component可能会有非常多的参数要通过props往下传，那么我们可以简单的这样
+<code>&lt;a {...this.props}&gt;</code> 就可以吧所有的props传给子元素
+</p>
+
+<p>
+但是如果某个中间Component消费了一些props,
+那么我们完全可以只把剩下的props继续传下去。
+<code>js var { checked, ...other } = this.props; var fancyClass = checked ? 'FancyChecked' : 'FancyUnchecked'; // `other` contains { onClick: console.log } but not the checked property return (   &lt;div {...other} className={fancyClass} /&gt; );</code>
+###mixin 可以mixin一些功能点 ```javascript
+var SetIntervalMixin = { &#x2026; };
+</p>
+
+<p>
+var TickTock = React.createClass({ mixins: [SetIntervalMixin], // Use
+the mixin })
+=###className 样式class在React中叫做className，同样他是一个字符串，但是React 提供了方便的classset工具，让我们而已这样=javascript
+var cx = React.addons.classSet; var classes = cx({ 'message': true,
+'message-important': this.props.isImportant, 'message-read':
+this.props.isRead });
+=从此就不用麻烦的拼接字符串了。 ###Inline style 这么多年来我们一直被教育说不要用 `inline style`，但是React貌似非常支持这种写法=javascript
+var divStyle = { color: 'white', backgroundImage: 'url(' + imgUrl + ')',
+WebkitTransition: 'all', <i>/ note the capital 'W' here msTransition:
+'all' /</i> 'ms' is the only lowercase vendor prefix };
+</p>
+
+<p>
+React.render(
+</p>
+
+<div style={divStyle}>
+
+<p>
+Hello World!
+</p>
+
+</div>
+
+<p>
+, mountNode); ```
+开始不理解为什么要吧style从字符串改成一个map，但是看到最近React
+Native的session顿时开朗了。 React Native把android和ios的Native
+ui都封装成了Component，但是native的ui并不会使用css来控制样式。
+那么facebook想出来的颠覆性的想法就是把样式写成inline的，然后native
+component去实现这些inline css样式 与native ui样式的bridge。
+</p>
+
+<p>
+把样式弄成map，这样可以方便重用，我们就可以方便的把这些样式抽成module ###
+refs
+我们知道如果想要子component发生某些变化是让父component做一些事情，可以把父componet的函数通过
+props传给子component，然后等着被回调就好了。。
+</p>
+
+<p>
+另外一个方向是，如果父component发生某些变化，想让子component做一些事情的话，比如我在父component点了
+个按钮，想让一个子component显示或不显示，有两种方法可以做这件事情： -
+通过props传一个显示不显示的标志进去，然后子component通过不同的标志调整显示的样式。
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+<p>
+子component暴露一个公开方法，父component通过拿到子component的引用=ref=，调用这个公开方法。
+</p>
+
+<p>
+<code>js var App = React.createClass({   ...   clearAndFocusInput: function() {     // Clear the input     this.setState({userInput: ''}, function() {       // This code executes after the component is re-rendered       this.refs.theInput.getDOMNode().focus();   // Boom! Focused!     });   },   render: function() {     return (       &lt;div&gt;         &lt;div onClick={this.clearAndFocusInput}&gt;           Click to Focus and Reset         &lt;/div&gt;         &lt;input           ref</code>"theInput"           value={this.state.userInput}           onChange={this.handleChange}         /&gt;       &lt;/div&gt;     );   } });=
+选择后者的好处是可以少传点props
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">PureRenderMixin</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+想想如果一个纯函数，他每次相同输入都是相同的输出，我们就不需要再检查状态，不需要比较那个地方可能会被
+不知道谁谁谁修改了，那么在shouldComponentUpdate的判断的时候，我们不会担心state里面某个很深的字段被改掉了没，只要做
+一个浅比较就可以了。如果你用了一些Immutable的数据结构，大可以把这个mixin加上。
+<code>js var PureRenderMixin = require('react').addons.PureRenderMixin; React.createClass({   mixins: [PureRenderMixin],   ...</code>
+</p>
+
+<p>
+shouldComponentUpdate
+而且会跳过其子component的更新，所以最好你的子component也是纯的. ###
+Immutable datastructure - <a href="http://swannodette.github.io/mori/">mori</a>
+基本上是clojure里面的数据结构，用法也基本一样 -
+<a href="http://facebook.github.io/immutable-js/">Immutable</a>
+facebook的，比较轻量一点
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><a href="http://flowtype.org/docs/react-example.html#_">flow static type</a></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+flow
+可以让对js进行静态类型检查，也就是在编译期让我们可以避免很多类型带来的错误
+=js type Message = {   id: string;   threadID: string;   authorName: string;   date: Date;   text: string;   isRead: boolean; }; // &#x2026; get: function(id: string): ?Message {   return _messages[id]; },=
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jichao Ouyang</p>
+<p>Modified: 2015-03-04 Wed 15:59</p>
+<p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
+
+<!-- Google Analystics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32314154-10', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'orgblog';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Swiftype Search -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','eGLqWnAM75a66SiXKVW3');
+</script>
+</div>
+</body>
+</html>
