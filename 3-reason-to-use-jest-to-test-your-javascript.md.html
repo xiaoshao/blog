@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3-reason-to-use-jest-to-test-your-javascript.md</title>
+<!-- 2015-03-04 Wed 16:44 -->
+<meta  charset="utf-8">
+<meta  name="generator" content="Org-mode">
+<meta  name="author" content="Jichao Ouyang">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style/worg.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/index.html"> UP </a>
+ |
+ <a accesskey="H" href="https://oyanglul.us/~jichao.ouyang.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">3-reason-to-use-jest-to-test-your-javascript.md</h1>
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">🌰</a></li>
+<li><a href="#sec-2">1. Auto Mock</a></li>
+<li><a href="#sec-3">2. jsdom</a></li>
+<li><a href="#sec-4">3. Manual Mock</a></li>
+<li><a href="#sec-5">etc</a></li>
+<li><a href="#sec-6">Wrapup</a></li>
+</ul>
+</div>
+</nav>
+<p>
+#TITLE: 3 Reason to move from jasmine to jest<br >
+ #KEYS: jasmine,jest,facebook,javascript,test<br >
+ #DATE: 2014-10-28
+</p>
+
+<ul class="org-ul">
+<li><a href="https://rawgit.com/jcouyang/cc0e65e36af9c7c001e2/raw/b100f45ebfe7c196043cb10f967123f9ebde7ffc/1-painless-javascript-testing.html#/28">slides</a>
+</li>
+<li><a href="https://github.com/jcouyang/jest-sample">source</a>
+</li>
+</ul>
+
+<p>
+Javascript 的测试, 不管在用 <a href="http://jasmine.github.io">jasmine</a> 还是
+<a href="http://visionmedia.github.io/mocha/">mocha</a>,<br >
+都是很头疼的事情. 但是自从有了
+<a href="http://facebook.github.io/jest/">jest</a>, 一口气写7个测试, 腰也不疼了,
+头也不疼了.
+</p>
+
+<p>
+只需要 3 个理由
+</p>
+
+<p>
+在说用 jest 测为什么好之前,我们先来看我们要测的一个例子.
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">🌰</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+比如我要写一个模块要去取github 用户的follower 和他所有 repo 的 follower
+数量.
+</p>
+
+<p>
+那么我们应该有一个 User 的 Model.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js"><span style="color: #b22222;">// </span><span style="color: #b22222;">user.js</span>
+<span style="color: #a020f0;">var</span> <span style="color: #b8860b;">$</span> = require(<span style="color: #bc8f8f;">'jquery'</span>);
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">User</span>(<span style="color: #b8860b;">name</span>) {
+  <span style="color: #5f9ea0;">this</span>.name = name;
+  <span style="color: #5f9ea0;">this</span>.followers = 0;
+}
+User.<span style="color: #5f9ea0;">prototype</span>.fetch = <span style="color: #a020f0;">function</span>(){
+  <span style="color: #a020f0;">return</span> $.ajax({
+    url: <span style="color: #bc8f8f;">'https://api.github.com/users/'</span> + <span style="color: #5f9ea0;">this</span>.name,
+    method: <span style="color: #bc8f8f;">'get'</span>,
+    dataType: <span style="color: #bc8f8f;">'json'</span>
+  }).then(<span style="color: #a020f0;">function</span>(<span style="color: #b8860b;">data</span>){
+      <span style="color: #5f9ea0;">this</span>.followers = data.followers;
+  }.bind(<span style="color: #5f9ea0;">this</span>));
+};
+module.exports = User;
+</pre>
+</div>
+
+<p>
+我们还需要一个 repo 的 model, 大同小异略去
+</p>
+
+<p>
+最后, 整合这俩我要的东西, 并显示在页面上
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js"><span style="color: #b22222;">// </span><span style="color: #b22222;">follower.js</span>
+<span style="color: #a020f0;">var</span> <span style="color: #b8860b;">$</span> = require(<span style="color: #bc8f8f;">'jquery'</span>);
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">followerOf</span>(<span style="color: #b8860b;">user</span>, <span style="color: #b8860b;">repo</span>) {
+  user.fetch().then(repo.fetch).then(<span style="color: #a020f0;">function</span>(<span style="color: #b8860b;">_</span>){
+    $(<span style="color: #bc8f8f;">'#content'</span>).text(user.name +<span style="color: #bc8f8f;">"'s followers: "</span> + user.followers +
+                       <span style="color: #bc8f8f;">" and his repo "</span>+ repo.name +<span style="color: #bc8f8f;">"'s followers:"</span> + repo.followers);
+    });
+};
+
+module.exports = followerOf;
+</pre>
+</div>
+
+<p>
+&#x2013;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">1. Auto Mock</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+自动 mock 实在是最大的亮点, jest 重写了 require, 所以你的代码里的所有
+require 来的东西都自动 mock.
+</p>
+
+<p>
+因为在你的测试中往往只关心一个模块, 对于他的所有依赖其实都是无所谓的.
+</p>
+
+<p>
+在例子中, 如果我们在测 repo.js 的时候完全不关心那两个 jquery 的 ajax
+方法到底<br >
+写对没写对,反正我们期望能从 ajax 里面拿到我们想要的东西就对了. 因此,
+我希望 jquery 的<br >
+所有方法都是 mock 的. jest 让你很轻松的做到这点,
+因为是自动mock所有require 的东西, 而<br >
+对于目标测试模块, 只需要说我=dontMock= 我的目标模块就好了.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js">jest.dontMock(<span style="color: #bc8f8f;">'../repo'</span>);
+describe(<span style="color: #bc8f8f;">'Repo Model'</span>, <span style="color: #a020f0;">function</span>(){
+  <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">repo</span>;
+  beforeEach(<span style="color: #a020f0;">function</span>(){
+        <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">$</span> = require(<span style="color: #bc8f8f;">'jquery'</span>).setAjaxReturn({stargazers_count: 23});
+        <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">Repo</span> = require(<span style="color: #bc8f8f;">'../repo'</span>);
+    repo = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Repo</span>(<span style="color: #bc8f8f;">'jcouyang'</span>, <span style="color: #bc8f8f;">'gira'</span>);
+
+    });
+
+  it(<span style="color: #bc8f8f;">'should populate properties with data from github api'</span>, <span style="color: #a020f0;">function</span>(){
+        repo.fetch();
+        expect(repo.followers).toBe(23);
+  });
+});
+</pre>
+</div>
+
+<p>
+所以这个测试看起来就跟文档一样了,
+</p>
+
+<ol class="org-ol">
+<li><code>dontMock('./repo')</code> 说明我关心=repo=<br >
+   这个模块, 其他我都不 care.
+</li>
+<li>before 是我要进行操作所需要的东西.
+</li>
+
+<li>我要 jquery ajax 请求给我想要的数据
+</li>
+<li>我要一个我要测的 Repo 类的实例
+</li>
+
+<li>it 说明我关心地行为是神马
+</li>
+
+<li>我关心 fetch 的行为,是去取数据并给我把数据填充到我的 repo 实例中
+</li>
+</ol>
+
+<blockquote>
+<p>
+你可能要问 <code>segAjaxReturn</code> 是哪里冒出来的. 忍一忍稍后告诉你.
+</p>
+</blockquote>
+
+<p>
+有没有看虽然我显式的 mock jquery, 但是 Repo 里面 require 的 jquery
+其实是假的, 不然我们就真的访问<br >
+github api 了. 那样就不会每次都返回 23 个 follower 了.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">2. jsdom</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+好了现在我们来测 follower.js, 先看 follower 到底干了什么, 拿到 user 和
+repo<br >
+的信息然后组成一句话放到页面 id 为 content 的元素下面.
+</p>
+
+<p>
+好, 所以我们关心
+</p>
+
+<ul class="org-ul">
+<li>组出来的话对不对
+</li>
+<li>有没有放到 content 元素下, 所以 jquery
+的操作对不对也是我们关心的一部分
+</li>
+</ul>
+
+<p>
+我们不关心
+</p>
+
+<ul class="org-ul">
+<li>user 干了什么
+</li>
+<li>repo 干了什么
+</li>
+</ul>
+
+<p>
+这样,关心的就是不能 mock 的
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js">jest.dontMock(<span style="color: #bc8f8f;">'../follower'</span>)
+    .dontMock(<span style="color: #bc8f8f;">'jquery'</span>);
+describe(<span style="color: #bc8f8f;">'follower'</span>, <span style="color: #a020f0;">function</span>(){
+  <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">user</span>, <span style="color: #b8860b;">repo</span>, <span style="color: #b8860b;">follower</span>;
+    <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">$</span> = require(<span style="color: #bc8f8f;">'jquery'</span>);
+  beforeEach(<span style="color: #a020f0;">function</span>(){
+        <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">Repo</span> = require(<span style="color: #bc8f8f;">'../repo'</span>);
+        <span style="color: #a020f0;">var</span> <span style="color: #b8860b;">User</span> = require(<span style="color: #bc8f8f;">'../user'</span>);
+        follower = require(<span style="color: #bc8f8f;">'../follower'</span>);
+        user = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">User</span>(<span style="color: #bc8f8f;">'jcouyang'</span>);
+    repo = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Repo</span>(<span style="color: #bc8f8f;">'jcouyang'</span>, <span style="color: #bc8f8f;">'gira'</span>);
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#25105;&#20204;&#19981;&#20851;&#24515; user, &#20294;&#26159;&#25105;&#20204;&#24076;&#26395;&#20182;&#33021;&#36820;&#22238;&#19968;&#20010; deferred &#31867;&#22411;</span>
+      user.fetch.mockReturnValue($.Deferred().resolve(<span style="color: #bc8f8f;">'dont care'</span>));
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#25105;&#20204;&#35753;&#25105;&#20204;&#19981;&#20851;&#24515;&#30340; user &#21644; repo &#36820;&#22238;&#25105;&#20204;&#26399;&#26395;&#30340;&#19996;&#35199;&#23601;&#22909;</span>
+        user.name =<span style="color: #bc8f8f;">'jcouyang'</span>;
+        user.followers = 20;
+        repo.name = <span style="color: #bc8f8f;">'gira'</span>;
+        repo.followers = 21;
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#26399;&#24453;&#39029;&#38754;&#19978;&#26377;&#19968;&#20010;  id &#20026; content &#30340;&#20803;&#32032;</span>
+        document.body.innerHTML = <span style="color: #bc8f8f;">'&lt;div id="content"&gt;&lt;/div&gt;'</span>;
+    });
+
+  it(<span style="color: #bc8f8f;">'should populate properties with data from github api'</span>, <span style="color: #a020f0;">function</span>(){
+        follower(user,repo);
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#24076;&#26395; content &#19978;&#33021;&#24471;&#21040;&#24819;&#35201;&#30340;&#20869;&#23481;</span>
+        expect($(<span style="color: #bc8f8f;">"#content"</span>).text()).toBe(<span style="color: #bc8f8f;">'jcouyang\'s followers: 20 and his repo gira\'s followers:21'</span>);
+  });
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">3. Manual Mock</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+好了, 说好的解释 =setAjaxReturn=是怎么回事的
+</p>
+
+<p>
+嗯嗯, 是这样的, 虽然 jest 自动 mock 了我们不关心的模块,
+但是我们还是会希望<br >
+这个 mock 的玩意能有一些我们期望的行为, 也就是按我们的期望返回一些东西.
+比如<br >
+这里就是我们不关心 ajax 的逻辑,
+但是我们需要他能给我们返回一个东西,并且可以<br >
+thenable. 所以单纯的 mock 对象或函数都不能做到, 所以有了 manual mock
+这种东西.
+</p>
+
+<p>
+用 manual mock 需要建一个=__ mocks__= 文件夹,然后把所有的 mock 都扔进去.
+比如<br >
+我想 mock jquery, 那么我建一个=jquery.js= 扔进去
+</p>
+
+<pre class="example">
+var data = {};
+var mockDefered = function(data){
+    return {
+        then: function(cb){
+            return mockDefered(cb(data));
+        }
+    };
+};
+
+function ajax() {
+  return mockDefered(data);
+}
+
+function setAjaxReturn(shouldbe){
+    data = shouldbe;
+}
+exports.setAjaxReturn = setAjaxReturn;
+exports.ajax = ajax;
+</pre>
+
+<p>
+终于看见=setAjaxReturn=在哪里定义了:sweat\<sub>smile</sub>: 这里暴露两个函数
+</p>
+
+<ul class="org-ul">
+<li>setAjaxReturn: 可以设置我希望 ajax 返回的值
+</li>
+<li>ajax: 单纯的返回这个 thenable.
+</li>
+</ul>
+
+<p>
+所以我也不需要显示的声明 mock jquery什么什么的, 直接在测试里设置ajax
+的返回值就好了.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js"><span style="color: #a020f0;">var</span> <span style="color: #b8860b;">$</span> = require(<span style="color: #bc8f8f;">'jquery'</span>).setAjaxReturn({stargazers_count: 23});
+</pre>
+</div>
+
+<p>
+这是 repo 里面 require 的 jquery 已经被 mock 并且只要掉 ajax
+都会返回我<br >
+期望的值.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">etc</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><b>并行测试</b>:<br >
+   还用说么, 既然已经如此模块化好了, user repo 以及 follower
+的测试完全是互不依赖.<br >
+   没有什么理由一个一个测. 因此3个测试的耗时取决于最长时间的那个.
+所以如果有<br >
+   那个测试特别耗时,说明模块还不够细, 多拆几个就快了.
+</li>
+<li><b>promise</b>: 使用 pit() 来测试 thenable 的对象, 比如 repo 的例子,就
+keyi<br >
+   写成
+
+<pre class="example">
+pit('should populate properties with data from github api', function(){
+  return repo.fetch().then(
+expect(repo.followers).toBe(23);
+  );
+});
+</pre>
+</li>
+
+<li><b>Timer mocks</b>: 可以使用 mock 的 timer 和 ticks, 也就是你可以加速<br >
+   所有的setTimeout, setInterval, clearTimeout, clearInterval行为.
+不需要等待.<br >
+   <code>js setTimeout(function() { callback(); }, 1000);  expect(callback).not.toBeCalled();  jest.runAllTimers(); expect(callback).toBeCalled()</code>
+</li>
+</ul>
+
+<hr >
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Wrapup</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+所以说白了, jest 其实也是个概念, 推荐使用模块化的思想,
+这样我只需要保证每个接口的 IO 正确, 就可以保证整个程序没问题.
+这样划分下来测试就会变得简单到只需要关心当然模块的 IO 从而<br >
+可以 mock 掉所有其他依赖. 真正模块化好的代码单纯的只用 jasmine 或者
+mocha<br >
+都应该是很好测的. 只是在这个概念之上省去了很多不必要的 mock 代码, 因为要
+mock 的<br >
+依赖总是占大多数的, 而关心的, 往往只是那么一两个.
+</p>
+
+<p>
+<a href="https://ga-beacon.appspot.com/UA-32314154-5/blogist/3-reason-to-use-jest">https://ga-beacon.appspot.com/UA-32314154-5/blogist/3-reason-to-use-jest</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jichao Ouyang</p>
+<p>Modified: 2015-03-04 Wed 16:44</p>
+<p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
+
+<!-- Google Analystics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32314154-10', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'orgblog';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Swiftype Search -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','eGLqWnAM75a66SiXKVW3');
+</script>
+</div>
+</body>
+</html>
