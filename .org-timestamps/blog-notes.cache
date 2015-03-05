@@ -15,7 +15,7 @@
 (puthash "X8f68df6a5fc5653b0645943d1d5816df6e246dc0" "c7cdee16a3d483680265a8ff404c3ff4" org-publish-cache)
 (puthash "/home/travis/build/jcouyang/blog/org/react-tips.md.org" '(:title "Some React Tips\\\\
 " :numbering ((("Prop" "Validation") 1) (("Prop" "shortcut") 2) (("mixin") 3) (("className") 4) (("Inline" "style") 5) (("refs") 6) (("PureRenderMixin") 7) (("Immutable" "datastructure") 8) (("[[http://flowtype.org/docs/react-example.html#_][flow" "static" "type]]") 9)) :index nil) org-publish-cache)
-(puthash "Xa63219fff8c0b49e045815bb4f76ace5b0a67f3b" "513c02ebb23444fbdf06c03a86a19240" org-publish-cache)
+(puthash "Xa63219fff8c0b49e045815bb4f76ace5b0a67f3b" "d446388a8eb5a23a0a1d956fe31a64fc" org-publish-cache)
 (puthash "/home/travis/build/jcouyang/blog/org/3-reason-to-use-jest-to-test-your-javascript.md.org" '(:title "3 Reason to move from jasmine to jest\\\\
 " :numbering ((("🌰") 1) (("1." "Auto" "Mock") 2) (("2." "jsdom") 3) (("3." "Manual" "Mock") 4) (("etc") 5) (("Wrapup") 6)) :index nil) org-publish-cache)
 (puthash "X79c9102735be2abdcf665eb3a966cbbc7a26c35b" "71e0d75044ad73ded0ace5ad1d01d04c" org-publish-cache)
