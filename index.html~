@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Jichao Ouyang's Blog</title>
-<!-- 2015-03-05 Thu 12:17 -->
+<!-- 2015-03-05 Thu 12:28 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -61,24 +61,35 @@ for the JavaScript code in this tag.
  <a accesskey="H" href="https://oyanglul.us/~jichao.ouyang.html"> HOME </a>
 </div><div id="content">
 <h1 class="title">Jichao Ouyang's Blog</h1>
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">=2014-10-28=]]</a></li>
+</ul>
+</div>
+</nav>
 <ul class="org-ul">
-<li><a href="emacs/Literal Programming Emacs Config.html"><b>Literal Programming Emacs Config</b> <code>2015-03-05</code></a>
+<li><a href="emacs/Literal Programming Emacs Config.html"><b>Literal Programming Emacs Config</b> <code>2014-04-01</code></a>
 </li>
-<li><a href="clojure/试试Clojure.html"><b>试试Clojure</b> <code>2015-03-05</code></a>
+<li><a href="clojure/试试Clojure.html"><b>Why Clojure is Awesome</b> <code>2015-02-26</code></a>
 </li>
 <li><a href="react-tips.md.html"><b>react-tips.md</b> <code>2015-03-05</code></a>
 </li>
-<li><a href="3-reason-to-use-jest-to-test-your-javascript.md.html"><b>3 Reason to move from jasmine to jest</b> <code>2015-03-05</code></a>
+<li><a href="make Bamboo support Github Pull Request with Status API.html"><b>make Bamboo support Github Pull Request with Status API</b> <code>2015-02-18</code></a>
 </li>
-<li><a href="make Bamboo support Github Pull Request with Status API.html"><b>make Bamboo support Github Pull Request with Status API</b> <code>2015-03-05</code></a>
+<li><a href="README.html"><b>Simple Org Blog Generator</b> <code>2015-02-05</code></a>
 </li>
-<li><a href="README.html"><b>Simple Org Blog Generator</b> <code>2015-03-05</code></a>
+<li>[[<a href="3-reason-to-use-jest-to-test-your-javascript.md.org][*3">3-reason-to-use-jest-to-test-your-javascript.md.org][*3</a> Reason to move from jasmine to jest<br >
 </li>
 </ul>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">=2014-10-28=]]</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:17</p>
+<p>Modified: 2015-03-05 Thu 12:28</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 
