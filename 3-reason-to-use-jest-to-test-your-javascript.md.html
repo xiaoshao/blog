@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>3 Reason to move from jasmine to jest</title>
-<!-- 2015-03-05 Thu 11:56 -->
+<!-- 2015-03-05 Thu 12:17 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -83,10 +83,9 @@ for the JavaScript code in this tag.
 
 <p>
 Javascript 的测试, 不管在用 <a href="http://jasmine.github.io">jasmine</a> 还是
-<a href="http://visionmedia.github.io/mocha/">mocha</a>,<br >
-都是很头疼的事情. 但是自从有了
-<a href="http://facebook.github.io/jest/">jest</a>, 一口气写7个测试, 腰也不疼了,
-头也不疼了.
+<a href="http://visionmedia.github.io/mocha/">mocha</a>, 都是很头疼的事情.
+但是自从有了 <a href="http://facebook.github.io/jest/">jest</a>, 一口气写7个测试,
+腰也不疼了, 头也不疼了.
 </p>
 
 <p>
@@ -173,12 +172,10 @@ require 来的东西都自动 mock.
 
 <p>
 在例子中, 如果我们在测 repo.js 的时候完全不关心那两个 jquery 的 ajax
-方法到底<br >
-写对没写对,反正我们期望能从 ajax 里面拿到我们想要的东西就对了. 因此,
-我希望 jquery 的<br >
-所有方法都是 mock 的. jest 让你很轻松的做到这点,
-因为是自动mock所有require 的东西, 而<br >
-对于目标测试模块, 只需要说我=dontMock= 我的目标模块就好了.
+方法到底 写对没写对,反正我们期望能从 ajax 里面拿到我们想要的东西就对了.
+因此, 我希望 jquery 的 所有方法都是 mock 的. jest 让你很轻松的做到这点,
+因为是自动mock所有require 的东西, 而 对于目标测试模块,
+只需要说我=dontMock= 我的目标模块就好了.
 </p>
 
 <div class="org-src-container">
@@ -206,8 +203,7 @@ describe(<span style="color: #bc8f8f;">'Repo Model'</span>, <span style="color: 
 </p>
 
 <ol class="org-ol">
-<li><code>dontMock('./repo')</code> 说明我关心=repo=<br >
-   这个模块, 其他我都不 care.
+<li><code>dontMock('./repo')</code> 说明我关心=repo= 这个模块, 其他我都不 care.
 </li>
 <li>before 是我要进行操作所需要的东西.
 </li>
@@ -232,8 +228,8 @@ describe(<span style="color: #bc8f8f;">'Repo Model'</span>, <span style="color: 
 
 <p>
 有没有看虽然我显式的 mock jquery, 但是 Repo 里面 require 的 jquery
-其实是假的, 不然我们就真的访问<br >
-github api 了. 那样就不会每次都返回 23 个 follower 了.
+其实是假的, 不然我们就真的访问 github api 了. 那样就不会每次都返回 23 个
+follower 了.
 </p>
 </div>
 </div>
@@ -243,32 +239,17 @@ github api 了. 那样就不会每次都返回 23 个 follower 了.
 <div class="outline-text-2" id="text-3">
 <p>
 好了现在我们来测 follower.js, 先看 follower 到底干了什么, 拿到 user 和
-repo<br >
-的信息然后组成一句话放到页面 id 为 content 的元素下面.
+repo 的信息然后组成一句话放到页面 id 为 content 的元素下面.
 </p>
 
 <p>
-好, 所以我们关心
+好, 所以我们关心 - 组出来的话对不对 - 有没有放到 content 元素下, 所以
+jquery 的操作对不对也是我们关心的一部分
 </p>
-
-<ul class="org-ul">
-<li>组出来的话对不对
-</li>
-<li>有没有放到 content 元素下, 所以 jquery
-的操作对不对也是我们关心的一部分
-</li>
-</ul>
 
 <p>
-我们不关心
+我们不关心 - user 干了什么 - repo 干了什么
 </p>
-
-<ul class="org-ul">
-<li>user 干了什么
-</li>
-<li>repo 干了什么
-</li>
-</ul>
 
 <p>
 这样,关心的就是不能 mock 的
@@ -318,19 +299,15 @@ describe(<span style="color: #bc8f8f;">'follower'</span>, <span style="color: #a
 
 <p>
 嗯嗯, 是这样的, 虽然 jest 自动 mock 了我们不关心的模块,
-但是我们还是会希望<br >
-这个 mock 的玩意能有一些我们期望的行为, 也就是按我们的期望返回一些东西.
-比如<br >
-这里就是我们不关心 ajax 的逻辑,
-但是我们需要他能给我们返回一个东西,并且可以<br >
-thenable. 所以单纯的 mock 对象或函数都不能做到, 所以有了 manual mock
-这种东西.
+但是我们还是会希望 这个 mock 的玩意能有一些我们期望的行为,
+也就是按我们的期望返回一些东西. 比如 这里就是我们不关心 ajax 的逻辑,
+但是我们需要他能给我们返回一个东西,并且可以 thenable. 所以单纯的 mock
+对象或函数都不能做到, 所以有了 manual mock 这种东西.
 </p>
 
 <p>
 用 manual mock 需要建一个=__ mocks__= 文件夹,然后把所有的 mock 都扔进去.
-比如<br >
-我想 mock jquery, 那么我建一个=jquery.js= 扔进去
+比如 我想 mock jquery, 那么我建一个=jquery.js= 扔进去
 </p>
 
 <pre class="example">
@@ -355,15 +332,10 @@ exports.ajax = ajax;
 </pre>
 
 <p>
-终于看见=setAjaxReturn=在哪里定义了:sweat\<sub>smile</sub>: 这里暴露两个函数
+终于看见=setAjaxReturn=在哪里定义了:sweat\<sub>smile</sub>: 这里暴露两个函数 -
+setAjaxReturn: 可以设置我希望 ajax 返回的值 - ajax: 单纯的返回这个
+thenable.
 </p>
-
-<ul class="org-ul">
-<li>setAjaxReturn: 可以设置我希望 ajax 返回的值
-</li>
-<li>ajax: 单纯的返回这个 thenable.
-</li>
-</ul>
 
 <p>
 所以我也不需要显示的声明 mock jquery什么什么的, 直接在测试里设置ajax
@@ -377,8 +349,7 @@ exports.ajax = ajax;
 </div>
 
 <p>
-这是 repo 里面 require 的 jquery 已经被 mock 并且只要掉 ajax
-都会返回我<br >
+这是 repo 里面 require 的 jquery 已经被 mock 并且只要掉 ajax 都会返回我
 期望的值.
 </p>
 </div>
@@ -388,16 +359,13 @@ exports.ajax = ajax;
 <h2 id="sec-5">etc</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
-<li><b>并行测试</b>:<br >
-   还用说么, 既然已经如此模块化好了, user repo 以及 follower
-的测试完全是互不依赖.<br >
-   没有什么理由一个一个测. 因此3个测试的耗时取决于最长时间的那个.
-所以如果有<br >
-   那个测试特别耗时,说明模块还不够细, 多拆几个就快了.
+<li><b>并行测试</b>: 还用说么, 既然已经如此模块化好了, user repo 以及 follower
+的测试完全是互不依赖. 没有什么理由一个一个测.
+因此3个测试的耗时取决于最长时间的那个. 所以如果有
+那个测试特别耗时,说明模块还不够细, 多拆几个就快了.
 </li>
 <li><b>promise</b>: 使用 pit() 来测试 thenable 的对象, 比如 repo 的例子,就
-keyi<br >
-   写成
+keyi 写成
 
 <pre class="example">
 pit('should populate properties with data from github api', function(){
@@ -408,10 +376,10 @@ expect(repo.followers).toBe(23);
 </pre>
 </li>
 
-<li><b>Timer mocks</b>: 可以使用 mock 的 timer 和 ticks, 也就是你可以加速<br >
-   所有的setTimeout, setInterval, clearTimeout, clearInterval行为.
-不需要等待.<br >
-   <code>js setTimeout(function() { callback(); }, 1000);  expect(callback).not.toBeCalled();  jest.runAllTimers(); expect(callback).toBeCalled()</code>
+<li><b>Timer mocks</b>: 可以使用 mock 的 timer 和 ticks, 也就是你可以加速
+所有的setTimeout, setInterval, clearTimeout, clearInterval行为.
+不需要等待.
+<code>js setTimeout(function() { callback(); }, 1000);  expect(callback).not.toBeCalled();  jest.runAllTimers(); expect(callback).toBeCalled()</code>
 </li>
 </ul>
 
@@ -425,12 +393,10 @@ expect(repo.followers).toBe(23);
 <p>
 所以说白了, jest 其实也是个概念, 推荐使用模块化的思想,
 这样我只需要保证每个接口的 IO 正确, 就可以保证整个程序没问题.
-这样划分下来测试就会变得简单到只需要关心当然模块的 IO 从而<br >
-可以 mock 掉所有其他依赖. 真正模块化好的代码单纯的只用 jasmine 或者
-mocha<br >
+这样划分下来测试就会变得简单到只需要关心当然模块的 IO 从而 可以 mock
+掉所有其他依赖. 真正模块化好的代码单纯的只用 jasmine 或者 mocha
 都应该是很好测的. 只是在这个概念之上省去了很多不必要的 mock 代码, 因为要
-mock 的<br >
-依赖总是占大多数的, 而关心的, 往往只是那么一两个.
+mock 的 依赖总是占大多数的, 而关心的, 往往只是那么一两个.
 </p>
 
 <p>
@@ -441,7 +407,7 @@ mock 的<br >
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 11:56</p>
+<p>Modified: 2015-03-05 Thu 12:17</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 
