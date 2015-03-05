@@ -7,8 +7,8 @@
 (puthash "X74b97857dd76943f0000470024a9ba89851c8017" "6df5bc760cbfcf19de1271ce4b462c7e" org-publish-cache)
 (puthash "X6527f683883fb90af51b191153840bd8fcf39bb5" "b547242016af28e12573ea4346af596d" org-publish-cache)
 (puthash "Xaf3d12b83ad493105ac5217283143005aa9cca9e" "2a4efa3f76f789c4bdef289a6c63b331" org-publish-cache)
-(puthash "/home/travis/build/jcouyang/blog/org/index.org" '(:numbering ((("=2015-03-05=]]") 1) (("=2015-03-05=]]") 2)) :index nil) org-publish-cache)
-(puthash "Xfd9b604f40ed6cbd46c667edb471e631f35fa3e8" "5d26eb5c5ba9075e832a166812701be8" org-publish-cache)
+(puthash "/home/travis/build/jcouyang/blog/org/index.org" '(:numbering ((("=2015-03-05=]]") 1)) :index nil) org-publish-cache)
+(puthash "Xfd9b604f40ed6cbd46c667edb471e631f35fa3e8" "e884bc0d6baa5bc5cb2b26f395da236c" org-publish-cache)
 (puthash "/home/travis/build/jcouyang/blog/org/theindex.org" '(:numbering ((("B") 1) (("G") 2)) :index nil) org-publish-cache)
 (puthash "X2eb119fb2851e20463ba88b27aede94ba260e725" "73039d9cf6d4d0c0127bc489c7466b48" org-publish-cache)
 (puthash "/home/travis/build/jcouyang/blog/org/README.org" '(:title "Simple Org Blog Generator" :numbering ((("TLDR;" "Why" "another" "Org" "Mode" "Blog" "Generator") 1) (("This" "is" "a" "*really*" "*really" "simple*" "blog" "generator") 1 1) (("...and" "Travis-ci" "will" "do" "it's" "job") 1 2) (("also" "disqus" "comment" "system") 1 3) (("RSS") 1 4) (("Site" "Search") 1 5) (("Live" "Demo") 2) (("OK" "here" "is" "the" "Magic") 3) (("Configuration") 4) (("Deploy" "Key") 4 1) (("=ssh-keygen=:") 4 1 1) (("=gem" "install" "travis=") 4 1 2) (("=travis" "login=") 4 1 3) (("=travis" "encrypt-file" "deploy" "--add=") 4 1 4) (("=cat" "deploy.pub" "|" "pbcopy=") 4 1 5) (("open" "the" "github" "repo" "you" "wanna" "publish" "as" "github" "pages" ">" "Settings" ">" "Deploy" "keys") 4 1 6) (("=PASTE=") 4 1 7) (("Default" "Author" "Name") 4 2) (("repository") 4 3) (("Disqus") 4 4) (("Google" "Analystics") 4 5) (("Swiftype") 4 6)) :index nil) org-publish-cache)
@@ -16,6 +16,5 @@
 (puthash "/home/travis/build/jcouyang/blog/org/react-tips.md.org" '(:title "Some React Tips\\\\
 " :numbering ((("Prop" "Validation") 1) (("Prop" "shortcut") 2) (("mixin") 3) (("className") 4) (("Inline" "style") 5) (("refs") 6) (("PureRenderMixin") 7) (("Immutable" "datastructure") 8) (("[[http://flowtype.org/docs/react-example.html#_][flow" "static" "type]]") 9)) :index nil) org-publish-cache)
 (puthash "Xa63219fff8c0b49e045815bb4f76ace5b0a67f3b" "d446388a8eb5a23a0a1d956fe31a64fc" org-publish-cache)
-(puthash "/home/travis/build/jcouyang/blog/org/3-reason-to-use-jest-to-test-your-javascript.md.org" '(:title "3 Reason to move from jasmine to jest\\\\
-" :numbering ((("🌰") 1) (("1." "Auto" "Mock") 2) (("2." "jsdom") 3) (("3." "Manual" "Mock") 4) (("etc") 5) (("Wrapup") 6)) :index nil) org-publish-cache)
-(puthash "X79c9102735be2abdcf665eb3a966cbbc7a26c35b" "71e0d75044ad73ded0ace5ad1d01d04c" org-publish-cache)
+(puthash "/home/travis/build/jcouyang/blog/org/3-reason-to-use-jest-to-test-your-javascript.md.org" '(:title "3 Reason to move from jasmine to jest" :numbering ((("🌰") 1) (("1." "Auto" "Mock") 2) (("2." "jsdom") 3) (("3." "Manual" "Mock") 4) (("etc") 5) (("Wrapup") 6)) :index nil) org-publish-cache)
+(puthash "X79c9102735be2abdcf665eb3a966cbbc7a26c35b" "0bc858be95b2afaa95a92a34d90b7f4a" org-publish-cache)
