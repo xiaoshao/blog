@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Jichao Ouyang's Blog</title>
-<!-- 2015-03-05 Thu 12:28 -->
+<!-- 2015-03-05 Thu 12:39 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -70,13 +70,15 @@ for the JavaScript code in this tag.
 </div>
 </nav>
 <ul class="org-ul">
-<li><a href="emacs/Literal Programming Emacs Config.html"><b>Literal Programming Emacs Config</b> <code>2014-04-01</code></a>
-</li>
-<li><a href="clojure/试试Clojure.html"><b>Why Clojure is Awesome</b> <code>2015-02-26</code></a>
-</li>
 <li><a href="react-tips.md.html"><b>react-tips.md</b> <code>2015-03-05</code></a>
 </li>
 <li><a href="make Bamboo support Github Pull Request with Status API.html"><b>make Bamboo support Github Pull Request with Status API</b> <code>2015-02-18</code></a>
+</li>
+<li><a href="emacs/Literal Programming Emacs Config2.html"><b>Literal Programming Emacs Config2</b> <code>2014-04-02</code></a>
+</li>
+<li><a href="emacs/Literal Programming Emacs Config.html"><b>Literal Programming Emacs Config</b> <code>2014-04-01</code></a>
+</li>
+<li><a href="clojure/试试Clojure.html"><b>Why Clojure is Awesome</b> <code>2015-02-26</code></a>
 </li>
 <li><a href="README.html"><b>Simple Org Blog Generator</b> <code>2015-02-05</code></a>
 </li>
@@ -89,7 +91,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:28</p>
+<p>Modified: 2015-03-05 Thu 12:38</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 
