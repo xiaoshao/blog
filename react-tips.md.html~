@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Some React Tips</title>
-<!-- 2015-03-05 Thu 12:02 -->
+<title>react-tips.md</title>
+<!-- 2015-03-05 Thu 12:17 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
-<meta  name="description" content="some tips and tricks when I using React"
->
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style/worg.css" />
 <script type="text/javascript">
 /*
@@ -62,7 +60,7 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="https://oyanglul.us/~jichao.ouyang.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">Some React Tips</h1>
+<h1 class="title">react-tips.md</h1>
 <nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -72,13 +70,29 @@ for the JavaScript code in this tag.
 <li><a href="#sec-3">mixin</a></li>
 <li><a href="#sec-4">className</a></li>
 <li><a href="#sec-5">Inline style</a></li>
-<li><a href="#sec-6">refs</a></li>
-<li><a href="#sec-7">PureRenderMixin</a></li>
-<li><a href="#sec-8">Immutable datastructure</a></li>
-<li><a href="#sec-9">flow static type</a></li>
+<li><a href="#sec-6">PureRenderMixin</a></li>
+<li><a href="#sec-7">flow static type</a></li>
 </ul>
 </div>
 </nav>
+<table>
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="left">#+TITLE: Some React Tips</td>
+<td class="left">#+DESCRIPTION: some tips and tricks when I</td>
+</tr>
+</tbody>
+</table>
+<p>
+using React | #+KEYS: react,react.js,tips,facebook | #+DATE: 2015-02-15
+</p>
 
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Prop Validation</h2>
@@ -88,7 +102,7 @@ for the JavaScript code in this tag.
 </p>
 
 <p>
-如果把每个Component想象成一个函数，那么props就是这个函数的参数。在有类型检查的语言中，很容易在编译期间就可以对参数类型检<br >
+如果把每个Component想象成一个函数，那么props就是这个函数的参数。在有类型检查的语言中，很容易在编译期间就可以对参数类型检
 查来避免一些不必要的错误。
 </p>
 
@@ -166,7 +180,7 @@ var TickTock = React.createClass({
 <h2 id="sec-4">className</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-样式class在React中叫做className，同样他是一个字符串，但是React<br >
+样式class在React中叫做className，同样他是一个字符串，但是React
 提供了方便的classset工具，让我们而已这样
 </p>
 
@@ -206,39 +220,30 @@ React.render(&lt;div style={divStyle}&gt;Hello World!&lt;/div&gt;, mountNode);
 
 <p>
 开始不理解为什么要吧style从字符串改成一个map，但是看到最近React
-Native的session顿时开朗了。<br >
-React Native把android和ios的Native
-ui都封装成了Component，但是native的ui并不会使用css来控制样式。<br >
+Native的session顿时开朗了。 React Native把android和ios的Native
+ui都封装成了Component，但是native的ui并不会使用css来控制样式。
 那么facebook想出来的颠覆性的想法就是把样式写成inline的，然后native
-component去实现这些inline css样式<br >
-与native ui样式的bridge。
+component去实现这些inline css样式 与native ui样式的bridge。
 </p>
 
 <p>
 把样式弄成map，这样可以方便重用，我们就可以方便的把这些样式抽成module
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">refs</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-我们知道如果想要子component发生某些变化是让父component做一些事情，可以把父componet的函数通过<br >
+### refs
+我们知道如果想要子component发生某些变化是让父component做一些事情，可以把父componet的函数通过
 props传给子component，然后等着被回调就好了。。
 </p>
 
 <p>
-另外一个方向是，如果父component发生某些变化，想让子component做一些事情的话，比如我在父component点了<br >
-个按钮，想让一个子component显示或不显示，有两种方法可以做这件事情：
+另外一个方向是，如果父component发生某些变化，想让子component做一些事情的话，比如我在父component点了
+个按钮，想让一个子component显示或不显示，有两种方法可以做这件事情： -
+通过props传一个显示不显示的标志进去，然后子component通过不同的标志调整显示的样式。
 </p>
-
 <ul class="org-ul">
-<li>通过props传一个显示不显示的标志进去，然后子component通过不同的标志调整显示的样式。
-</li>
-<li>子component暴露一个公开方法，父component通过拿到子component的引用=ref=，调用这个公开方法。
-</li>
+<li></li>
 </ul>
+<p>
+子component暴露一个公开方法，父component通过拿到子component的引用=ref=，调用这个公开方法。
+</p>
 
 <div class="org-src-container">
 
@@ -275,12 +280,12 @@ props传给子component，然后等着被回调就好了。。
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">PureRenderMixin</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">PureRenderMixin</h2>
+<div class="outline-text-2" id="text-6">
 <p>
-想想如果一个纯函数，他每次相同输入都是相同的输出，我们就不需要再检查状态，不需要比较那个地方可能会被<br >
-不知道谁谁谁修改了，那么在shouldComponentUpdate的判断的时候，我们不会担心state里面某个很深的字段被改掉了没，只要做<br >
+想想如果一个纯函数，他每次相同输入都是相同的输出，我们就不需要再检查状态，不需要比较那个地方可能会被
+不知道谁谁谁修改了，那么在shouldComponentUpdate的判断的时候，我们不会担心state里面某个很深的字段被改掉了没，只要做
 一个浅比较就可以了。如果你用了一些Immutable的数据结构，大可以把这个mixin加上。
 </p>
 
@@ -295,28 +300,18 @@ React.createClass({
 
 <p>
 shouldComponentUpdate
-而且会跳过其子component的更新，所以最好你的子component也是纯的.
+而且会跳过其子component的更新，所以最好你的子component也是纯的. ###
+Immutable datastructure - <a href="http://swannodette.github.io/mori/">mori</a>
+基本上是clojure里面的数据结构，用法也基本一样 -
+<a href="http://facebook.github.io/immutable-js/">Immutable</a>
+facebook的，比较轻量一点
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">Immutable datastructure</h2>
-<div class="outline-text-2" id="text-8">
-<ul class="org-ul">
-<li><a href="http://swannodette.github.io/mori/">mori</a><br >
-   基本上是clojure里面的数据结构，用法也基本一样
-</li>
-<li><a href="http://facebook.github.io/immutable-js/">Immutable</a><br >
-   facebook的，比较轻量一点
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9"><a href="http://flowtype.org/docs/react-example.html#_">flow static type</a></h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><a href="http://flowtype.org/docs/react-example.html#_">flow static type</a></h2>
+<div class="outline-text-2" id="text-7">
 <p>
 flow
 可以让对js进行静态类型检查，也就是在编译期让我们可以避免很多类型带来的错误
@@ -343,7 +338,7 @@ flow
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:02</p>
+<p>Modified: 2015-03-05 Thu 12:17</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 

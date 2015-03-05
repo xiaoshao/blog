@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Simple Org Blog Generator</title>
-<!-- 2015-03-05 Thu 12:28 -->
+<!-- 2015-03-04 Wed 03:53 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -65,7 +65,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">TL;DR Why another Org Mode Blog Generator</a>
+<li><a href="#sec-1">TLDR; Why another Org Mode Blog Generator</a>
 <ul>
 <li><a href="#sec-1-1">This is a <b>really</b> <b>really simple</b> blog generator</a></li>
 <li><a href="#sec-1-2">&#x2026;and Travis-ci will do it's job</a></li>
@@ -96,7 +96,7 @@ for the JavaScript code in this tag.
 </figure>
 
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">TL;DR Why another Org Mode Blog Generator</h2>
+<h2 id="sec-1">TLDR; Why another Org Mode Blog Generator</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1">This is a <b>really</b> <b>really simple</b> blog generator</h3>
@@ -271,7 +271,7 @@ also push user information <a href="https://github.com/jcouyang/blog/blob/master
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:28</p>
+<p>Modified: 2015-03-04 Wed 03:53</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 
