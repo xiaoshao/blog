@@ -2,11 +2,11 @@
 <html>
 <head>
 <title>3 Reason to move from jasmine to jest</title>
-<!-- 2015-03-06 Fri 08:40 -->
+<!-- 2015-03-06 Fri 09:33 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style/worg.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style/pixyll.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
