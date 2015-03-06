@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>3 Reason to move from jasmine to jest<br >
-</title>
-<!-- 2015-03-05 Thu 12:28 -->
+<title>3 Reason to move from jasmine to jest</title>
+<!-- 2015-03-05 Thu 16:23 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -61,8 +60,7 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="https://oyanglul.us/~jichao.ouyang.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">3 Reason to move from jasmine to jest<br >
-</h1>
+<h1 class="title">3 Reason to move from jasmine to jest</h1>
 <nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -409,7 +407,6 @@ mock 的 依赖总是占大多数的, 而关心的, 往往只是那么一两个.
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:28</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 

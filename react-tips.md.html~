@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>react-tips.md</title>
-<!-- 2015-03-05 Thu 12:17 -->
+<!-- 2015-03-05 Thu 12:28 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -91,7 +91,8 @@ for the JavaScript code in this tag.
 </tbody>
 </table>
 <p>
-using React | #+KEYS: react,react.js,tips,facebook | #+DATE: 2015-02-15
+using React | #+KEYS: react,react.js,tips,facebook | #+DATE:
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-02-15&gt;</span></span>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -338,7 +339,7 @@ flow
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:17</p>
+<p>Modified: 2015-03-05 Thu 12:28</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 
