@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Literal Programming Emacs Config</title>
-<!-- 2015-03-05 Thu 12:28 -->
+<!-- 2015-03-06 Fri 08:07 -->
 <meta  charset="utf-8">
 <meta  name="generator" content="Org-mode">
 <meta  name="author" content="Jichao Ouyang">
@@ -71,7 +71,25 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1">Usage</a>
 <ul>
 <li><a href="#sec-1-1">Installation</a></li>
-<li><a href="#sec-1-2">Keyboard shortcuts</a></li>
+<li><a href="#sec-1-2">Keyboard shortcuts</a>
+<ul>
+<li><a href="#sec-1-2-1">General</a></li>
+<li><a href="#sec-1-2-2">Interface</a></li>
+<li><a href="#sec-1-2-3">General</a></li>
+<li><a href="#sec-1-2-4">Interface</a></li>
+<li><a href="#sec-1-2-5">Internet</a></li>
+<li><a href="#sec-1-2-6">Editing</a></li>
+<li><a href="#sec-1-2-7">Source</a></li>
+<li><a href="#sec-1-2-8">Directory</a></li>
+<li><a href="#sec-1-2-9">Buffers</a></li>
+<li><a href="#sec-1-2-10">History</a></li>
+<li><a href="#sec-1-2-11">Occur</a></li>
+<li><a href="#sec-1-2-12">Windows</a></li>
+<li><a href="#sec-1-2-13">Find/Grep</a></li>
+<li><a href="#sec-1-2-14">VCS</a></li>
+<li><a href="#sec-1-2-15">Open</a></li>
+</ul>
+</li>
 <li><a href="#sec-1-3">Contributions</a></li>
 </ul>
 </li>
@@ -82,13 +100,84 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-3">Quelpa</a></li>
 <li><a href="#sec-2-4">Packages</a></li>
 <li><a href="#sec-2-5">Key Bindings</a></li>
-<li><a href="#sec-2-6">Settings</a></li>
-<li><a href="#sec-2-7">Modes</a></li>
+<li><a href="#sec-2-6">Settings</a>
+<ul>
+<li><a href="#sec-2-6-1">User Settings</a></li>
+<li><a href="#sec-2-6-2">Encoding</a></li>
+<li><a href="#sec-2-6-3">General Settings</a></li>
+<li><a href="#sec-2-6-4">Default Settings</a></li>
+<li><a href="#sec-2-6-5">Global Modes</a></li>
+<li><a href="#sec-2-6-6">Prompt Behavior</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-7">Modes</a>
+<ul>
+<li><a href="#sec-2-7-1">back-button</a></li>
+<li><a href="#sec-2-7-2">buffer-move</a></li>
+<li><a href="#sec-2-7-3">company</a></li>
+<li><a href="#sec-2-7-4">cider</a></li>
+<li><a href="#sec-2-7-5">dedicated</a></li>
+<li><a href="#sec-2-7-6">deft</a></li>
+<li><a href="#sec-2-7-7">diff-hl</a></li>
+<li><a href="#sec-2-7-8">dire and dired+</a></li>
+<li><a href="#sec-2-7-9">discover my major</a></li>
+<li><a href="#sec-2-7-10">editorconfig</a></li>
+<li><a href="#sec-2-7-11">elpy</a></li>
+<li><a href="#sec-2-7-12">expand-region</a></li>
+<li><a href="#sec-2-7-13">ido</a></li>
+<li><a href="#sec-2-7-14">flycheck-mode</a></li>
+<li><a href="#sec-2-7-15">google-this</a></li>
+<li><a href="#sec-2-7-16">guide-key</a></li>
+<li><a href="#sec-2-7-17">grizzl</a></li>
+<li><a href="#sec-2-7-18">helm</a></li>
+<li><a href="#sec-2-7-19">highlight-symbol</a></li>
+<li><a href="#sec-2-7-20">how do i</a></li>
+<li><a href="#sec-2-7-21">html-mode</a></li>
+<li><a href="#sec-2-7-22">ido-at-point</a></li>
+<li><a href="#sec-2-7-23">ido-mode</a></li>
+<li><a href="#sec-2-7-24">iedit</a></li>
+<li><a href="#sec-2-7-25">js2-mode</a></li>
+<li><a href="#sec-2-7-26">json-mode</a></li>
+<li><a href="#sec-2-7-27">less</a></li>
+<li><a href="#sec-2-7-28">magit</a></li>
+<li><a href="#sec-2-7-29">markdown</a></li>
+<li><a href="#sec-2-7-30">multiple-cursors</a></li>
+<li><a href="#sec-2-7-31">on-screen</a></li>
+<li><a href="#sec-2-7-32">htmlize</a></li>
+<li><a href="#sec-2-7-33">org-mode</a></li>
+<li><a href="#sec-2-7-34">projectile</a></li>
+<li><a href="#sec-2-7-35">rainbow-mode</a></li>
+<li><a href="#sec-2-7-36">recentf</a></li>
+<li><a href="#sec-2-7-37">robe</a></li>
+<li><a href="#sec-2-7-38">rvm</a></li>
+<li><a href="#sec-2-7-39">saveplace</a></li>
+<li><a href="#sec-2-7-40">savehist</a></li>
+<li><a href="#sec-2-7-41">sequential command</a></li>
+<li><a href="#sec-2-7-42">skewer</a></li>
+<li><a href="#sec-2-7-43">smartparens</a></li>
+<li><a href="#sec-2-7-44">smart-mode-line</a></li>
+<li><a href="#sec-2-7-45">sgml</a></li>
+<li><a href="#sec-2-7-46">slime</a></li>
+<li><a href="#sec-2-7-47">tern</a></li>
+<li><a href="#sec-2-7-48">textmate</a></li>
+<li><a href="#sec-2-7-49">uniqify</a></li>
+<li><a href="#sec-2-7-50">wrap-region</a></li>
+<li><a href="#sec-2-7-51">yaml-mode</a></li>
+<li><a href="#sec-2-7-52">yasnippets</a></li>
+<li><a href="#sec-2-7-53">w3m</a></li>
+<li><a href="#sec-2-7-54">web-mode</a></li>
+<li><a href="#sec-2-7-55">yaml-mode</a></li>
+</ul>
+</li>
 <li><a href="#sec-2-8">Theme, Faces, Frame</a></li>
 <li><a href="#sec-2-9">mac as meta key</a></li>
 <li><a href="#sec-2-10">paren mode</a></li>
 <li><a href="#sec-2-11">shell</a></li>
-<li><a href="#sec-2-12">end</a></li>
+<li><a href="#sec-2-12">end</a>
+<ul>
+<li><a href="#sec-2-12-1">my-keys-minor-mode</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -147,7 +236,9 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 当然在这个表格里只是我自己的偏好设置,你可以根据自己的偏好更改这个表格.
 </p>
 </div>
-<ul class="org-ul"><li><a id="sec-1-2-1" name="sec-1-2-1"></a>General<br ><div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">General</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <table rules="all" cellpadding="4">
 
 
@@ -249,8 +340,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-2" name="sec-1-2-2"></a>Interface<br ><div class="outline-text-4" id="text-1-2-2">
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">Interface</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <table rules="all" cellpadding="4">
 
 
@@ -267,8 +360,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-3" name="sec-1-2-3"></a>General<br ><div class="outline-text-4" id="text-1-2-3">
+</div>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">General</h4>
+<div class="outline-text-4" id="text-1-2-3">
 <table rules="all" cellpadding="4">
 
 
@@ -290,8 +385,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-4" name="sec-1-2-4"></a>Interface<br ><div class="outline-text-4" id="text-1-2-4">
+</div>
+<div id="outline-container-sec-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4">Interface</h4>
+<div class="outline-text-4" id="text-1-2-4">
 <table rules="all" cellpadding="4">
 
 
@@ -318,8 +415,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-5" name="sec-1-2-5"></a>Internet<br ><div class="outline-text-4" id="text-1-2-5">
+</div>
+<div id="outline-container-sec-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5">Internet</h4>
+<div class="outline-text-4" id="text-1-2-5">
 <table rules="all" cellpadding="4">
 
 
@@ -341,8 +440,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-6" name="sec-1-2-6"></a>Editing<br ><div class="outline-text-4" id="text-1-2-6">
+</div>
+<div id="outline-container-sec-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6">Editing</h4>
+<div class="outline-text-4" id="text-1-2-6">
 <table rules="all" cellpadding="4">
 
 
@@ -459,8 +560,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-7" name="sec-1-2-7"></a>Source<br ><div class="outline-text-4" id="text-1-2-7">
+</div>
+<div id="outline-container-sec-1-2-7" class="outline-4">
+<h4 id="sec-1-2-7">Source</h4>
+<div class="outline-text-4" id="text-1-2-7">
 <table rules="all" cellpadding="4">
 
 
@@ -502,8 +605,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-8" name="sec-1-2-8"></a>Directory<br ><div class="outline-text-4" id="text-1-2-8">
+</div>
+<div id="outline-container-sec-1-2-8" class="outline-4">
+<h4 id="sec-1-2-8">Directory</h4>
+<div class="outline-text-4" id="text-1-2-8">
 <table rules="all" cellpadding="4">
 
 
@@ -525,8 +630,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-9" name="sec-1-2-9"></a>Buffers<br ><div class="outline-text-4" id="text-1-2-9">
+</div>
+<div id="outline-container-sec-1-2-9" class="outline-4">
+<h4 id="sec-1-2-9">Buffers</h4>
+<div class="outline-text-4" id="text-1-2-9">
 <table rules="all" cellpadding="4">
 
 
@@ -578,8 +685,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-10" name="sec-1-2-10"></a>History<br ><div class="outline-text-4" id="text-1-2-10">
+</div>
+<div id="outline-container-sec-1-2-10" class="outline-4">
+<h4 id="sec-1-2-10">History</h4>
+<div class="outline-text-4" id="text-1-2-10">
 <table rules="all" cellpadding="4">
 
 
@@ -616,8 +725,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-11" name="sec-1-2-11"></a>Occur<br ><div class="outline-text-4" id="text-1-2-11">
+</div>
+<div id="outline-container-sec-1-2-11" class="outline-4">
+<h4 id="sec-1-2-11">Occur</h4>
+<div class="outline-text-4" id="text-1-2-11">
 <table rules="all" cellpadding="4">
 
 
@@ -664,8 +775,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-12" name="sec-1-2-12"></a>Windows<br ><div class="outline-text-4" id="text-1-2-12">
+</div>
+<div id="outline-container-sec-1-2-12" class="outline-4">
+<h4 id="sec-1-2-12">Windows</h4>
+<div class="outline-text-4" id="text-1-2-12">
 <table rules="all" cellpadding="4">
 
 
@@ -707,8 +820,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-13" name="sec-1-2-13"></a>Find/Grep<br ><div class="outline-text-4" id="text-1-2-13">
+</div>
+<div id="outline-container-sec-1-2-13" class="outline-4">
+<h4 id="sec-1-2-13">Find/Grep</h4>
+<div class="outline-text-4" id="text-1-2-13">
 <table rules="all" cellpadding="4">
 
 
@@ -770,8 +885,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-14" name="sec-1-2-14"></a>VCS<br ><div class="outline-text-4" id="text-1-2-14">
+</div>
+<div id="outline-container-sec-1-2-14" class="outline-4">
+<h4 id="sec-1-2-14">VCS</h4>
+<div class="outline-text-4" id="text-1-2-14">
 <table rules="all" cellpadding="4">
 
 
@@ -798,8 +915,10 @@ That's it. Then you can run emacs and it should pick up the config, install all 
 </tbody>
 </table>
 </div>
-</li>
-<li><a id="sec-1-2-15" name="sec-1-2-15"></a>Open<br ><div class="outline-text-4" id="text-1-2-15">
+</div>
+<div id="outline-container-sec-1-2-15" class="outline-4">
+<h4 id="sec-1-2-15">Open</h4>
+<div class="outline-text-4" id="text-1-2-15">
 <table rules="all" cellpadding="4">
 
 
@@ -847,7 +966,7 @@ This table is generated with an Elisp block <code>keys-doc</code> from an Org
 table which is also used in the code <i>further below</i>.
 </p>
 </div>
-</li></ul>
+</div>
 </div>
 
 <div id="outline-container-sec-1-3" class="outline-3">
@@ -1084,7 +1203,9 @@ comp
 <div id="outline-container-sec-2-6" class="outline-3">
 <h3 id="sec-2-6">Settings</h3>
 <div class="outline-text-3" id="text-2-6">
-</div><ul class="org-ul"><li><a id="sec-2-6-1" name="sec-2-6-1"></a>User Settings<br ><div class="outline-text-4" id="text-2-6-1">
+</div><div id="outline-container-sec-2-6-1" class="outline-4">
+<h4 id="sec-2-6-1">User Settings</h4>
+<div class="outline-text-4" id="text-2-6-1">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">(when (file-readable-p "~/steckemacs/.user.el") (load "~/steckemacs/.user.el"))</span>
@@ -1095,9 +1216,11 @@ comp
 用户设置, 放一些不想密码或敏感内容. 我配置evernote token
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-6-2" name="sec-2-6-2"></a>Encoding<br ><div class="outline-text-4" id="text-2-6-2">
+<div id="outline-container-sec-2-6-2" class="outline-4">
+<h4 id="sec-2-6-2">Encoding</h4>
+<div class="outline-text-4" id="text-2-6-2">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(set-terminal-coding-system 'utf-8)
@@ -1108,9 +1231,11 @@ comp
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-6-3" name="sec-2-6-3"></a>General Settings<br ><div class="outline-text-4" id="text-2-6-3">
+<div id="outline-container-sec-2-6-3" class="outline-4">
+<h4 id="sec-2-6-3">General Settings</h4>
+<div class="outline-text-4" id="text-2-6-3">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq
@@ -1134,9 +1259,11 @@ comp
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-6-4" name="sec-2-6-4"></a>Default Settings<br ><div class="outline-text-4" id="text-2-6-4">
+<div id="outline-container-sec-2-6-4" class="outline-4">
+<h4 id="sec-2-6-4">Default Settings</h4>
+<div class="outline-text-4" id="text-2-6-4">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq-default
@@ -1152,9 +1279,11 @@ comp
 These have to be set as defaults.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-6-5" name="sec-2-6-5"></a>Global Modes<br ><div class="outline-text-4" id="text-2-6-5">
+<div id="outline-container-sec-2-6-5" class="outline-4">
+<h4 id="sec-2-6-5">Global Modes</h4>
+<div class="outline-text-4" id="text-2-6-5">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(global-auto-revert-mode 1)  <span style="color: #b22222;">;</span><span style="color: #b22222;">auto revert buffers when changed on dis</span>
@@ -1176,9 +1305,11 @@ These have to be set as defaults.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-6-6" name="sec-2-6-6"></a>Prompt Behavior<br ><div class="outline-text-4" id="text-2-6-6">
+<div id="outline-container-sec-2-6-6" class="outline-4">
+<h4 id="sec-2-6-6">Prompt Behavior</h4>
+<div class="outline-text-4" id="text-2-6-6">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp"><span id="coderef-y-or-n" class="coderef-off"><span class="linenr">1: </span>(<span style="color: #a020f0;">defalias</span> '<span style="color: #0000ff;">yes-or-no-p</span> 'y-or-n-p)</span>
@@ -1196,14 +1327,16 @@ In <a href="#coderef-y-or-n"class="coderef" onmouseover="CodeHighlightOn(this, '
 Also Emacs should be able to kill processes without asking (<a href="#coderef-process-query"class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-process-query');" onmouseout="CodeHighlightOff(this, 'coderef-process-query');">line 2</a>). Got that snippet from: <a href="http://www.masteringemacs.org/articles/2010/11/14/disabling-prompts-emacs/">http://www.masteringemacs.org/articles/2010/11/14/disabling-prompts-emacs/</a>
 </p>
 </div>
-</li></ul>
+</div>
 </div>
 
 
 <div id="outline-container-sec-2-7" class="outline-3">
 <h3 id="sec-2-7">Modes</h3>
 <div class="outline-text-3" id="text-2-7">
-</div><ul class="org-ul"><li><a id="sec-2-7-1" name="sec-2-7-1"></a>back-button<br ><div class="outline-text-4" id="text-2-7-1">
+</div><div id="outline-container-sec-2-7-1" class="outline-4">
+<h4 id="sec-2-7-1">back-button</h4>
+<div class="outline-text-4" id="text-2-7-1">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'back-button)
@@ -1213,20 +1346,24 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-2" name="sec-2-7-2"></a>buffer-move<br ><div class="outline-text-4" id="text-2-7-2">
+<div id="outline-container-sec-2-7-2" class="outline-4">
+<h4 id="sec-2-7-2">buffer-move</h4>
+<div class="outline-text-4" id="text-2-7-2">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(buffer-move <span style="color: #da70d6;">:fetcher</span> wiki))
 </pre>
 </div>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-3" name="sec-2-7-3"></a>company<br ><div class="outline-text-4" id="text-2-7-3">
+<div id="outline-container-sec-2-7-3" class="outline-4">
+<h4 id="sec-2-7-3">company</h4>
+<div class="outline-text-4" id="text-2-7-3">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(company <span style="color: #da70d6;">:repo</span> <span style="color: #bc8f8f;">"company-mode/company-mode"</span> <span style="color: #da70d6;">:fetcher</span> github))
@@ -1252,18 +1389,22 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-4" name="sec-2-7-4"></a>cider<br ><div class="outline-text-4" id="text-2-7-4">
+<div id="outline-container-sec-2-7-4" class="outline-4">
+<h4 id="sec-2-7-4">cider</h4>
+<div class="outline-text-4" id="text-2-7-4">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq org-babel-clojure-backend 'cider)
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-5" name="sec-2-7-5"></a>dedicated<br ><div class="outline-text-4" id="text-2-7-5">
+<div id="outline-container-sec-2-7-5" class="outline-4">
+<h4 id="sec-2-7-5">dedicated</h4>
+<div class="outline-text-4" id="text-2-7-5">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(dedicated <span style="color: #da70d6;">:fetcher</span> github <span style="color: #da70d6;">:repo</span> <span style="color: #bc8f8f;">"emacsmirror/dedicated"</span>))
@@ -1271,8 +1412,10 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
-<li><a id="sec-2-7-6" name="sec-2-7-6"></a>deft<br ><div class="outline-text-4" id="text-2-7-6">
+</div>
+<div id="outline-container-sec-2-7-6" class="outline-4">
+<h4 id="sec-2-7-6">deft</h4>
+<div class="outline-text-4" id="text-2-7-6">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'deft)
@@ -1285,9 +1428,11 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-7" name="sec-2-7-7"></a>diff-hl<br ><div class="outline-text-4" id="text-2-7-7">
+<div id="outline-container-sec-2-7-7" class="outline-4">
+<h4 id="sec-2-7-7">diff-hl</h4>
+<div class="outline-text-4" id="text-2-7-7">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'diff-hl)
@@ -1295,8 +1440,10 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
-<li><a id="sec-2-7-8" name="sec-2-7-8"></a>dire and dired+<br ><div class="outline-text-4" id="text-2-7-8">
+</div>
+<div id="outline-container-sec-2-7-8" class="outline-4">
+<h4 id="sec-2-7-8">dire and dired+</h4>
+<div class="outline-text-4" id="text-2-7-8">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(dired+ <span style="color: #da70d6;">:fetcher</span> wiki))
@@ -1308,18 +1455,22 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-9" name="sec-2-7-9"></a>discover my major<br ><div class="outline-text-4" id="text-2-7-9">
+<div id="outline-container-sec-2-7-9" class="outline-4">
+<h4 id="sec-2-7-9">discover my major</h4>
+<div class="outline-text-4" id="text-2-7-9">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(discover-my-major <span style="color: #da70d6;">:fetcher</span> github <span style="color: #da70d6;">:repo</span> <span style="color: #bc8f8f;">"steckerhalter/discover-my-major"</span>))
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-10" name="sec-2-7-10"></a>editorconfig<br ><div class="outline-text-4" id="text-2-7-10">
+<div id="outline-container-sec-2-7-10" class="outline-4">
+<h4 id="sec-2-7-10">editorconfig</h4>
+<div class="outline-text-4" id="text-2-7-10">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'editorconfig)
@@ -1327,9 +1478,11 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-11" name="sec-2-7-11"></a>elpy<br ><div class="outline-text-4" id="text-2-7-11">
+<div id="outline-container-sec-2-7-11" class="outline-4">
+<h4 id="sec-2-7-11">elpy</h4>
+<div class="outline-text-4" id="text-2-7-11">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(elpy
@@ -1344,18 +1497,22 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-12" name="sec-2-7-12"></a>expand-region<br ><div class="outline-text-4" id="text-2-7-12">
+<div id="outline-container-sec-2-7-12" class="outline-4">
+<h4 id="sec-2-7-12">expand-region</h4>
+<div class="outline-text-4" id="text-2-7-12">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'expand-region)
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-13" name="sec-2-7-13"></a>ido<br ><div class="outline-text-4" id="text-2-7-13">
+<div id="outline-container-sec-2-7-13" class="outline-4">
+<h4 id="sec-2-7-13">ido</h4>
+<div class="outline-text-4" id="text-2-7-13">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'ido-at-point)
@@ -1367,10 +1524,12 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-14" name="sec-2-7-14"></a>flycheck-mode<br ><div class="outline-text-4" id="text-2-7-14">
+<div id="outline-container-sec-2-7-14" class="outline-4">
+<h4 id="sec-2-7-14">flycheck-mode</h4>
+<div class="outline-text-4" id="text-2-7-14">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(flycheck <span style="color: #da70d6;">:repo</span> <span style="color: #bc8f8f;">"flycheck/flycheck"</span> <span style="color: #da70d6;">:fetcher</span> github))
@@ -1384,9 +1543,11 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-15" name="sec-2-7-15"></a>google-this<br ><div class="outline-text-4" id="text-2-7-15">
+<div id="outline-container-sec-2-7-15" class="outline-4">
+<h4 id="sec-2-7-15">google-this</h4>
+<div class="outline-text-4" id="text-2-7-15">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'google-this)
@@ -1394,9 +1555,11 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-16" name="sec-2-7-16"></a>guide-key<br ><div class="outline-text-4" id="text-2-7-16">
+<div id="outline-container-sec-2-7-16" class="outline-4">
+<h4 id="sec-2-7-16">guide-key</h4>
+<div class="outline-text-4" id="text-2-7-16">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'guide-key)
@@ -1405,9 +1568,11 @@ Also Emacs should be able to kill processes without asking (<a href="#coderef-pr
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-17" name="sec-2-7-17"></a>grizzl<br ><div class="outline-text-4" id="text-2-7-17">
+<div id="outline-container-sec-2-7-17" class="outline-4">
+<h4 id="sec-2-7-17">grizzl</h4>
+<div class="outline-text-4" id="text-2-7-17">
 <blockquote>
 <p>
 Grizzl is a small utility library to be used in other Elisp code needing fuzzy search behaviour. It is optimized for large data sets, using a special type of lookup table and supporting incremental searches (searches where the result can be narrowed-down by only searching what is already matched).
@@ -1429,9 +1594,11 @@ Currently it is used by <a href="https://github.com/bbatsov/projectile">Projecti
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-18" name="sec-2-7-18"></a>helm<br ><div class="outline-text-4" id="text-2-7-18">
+<div id="outline-container-sec-2-7-18" class="outline-4">
+<h4 id="sec-2-7-18">helm</h4>
+<div class="outline-text-4" id="text-2-7-18">
 <blockquote>
 <p>
 Helm is incremental completion and selection narrowing framework for Emacs. It will help steer you in the right direction when you're looking for stuff in Emacs (like buffers, files, etc).
@@ -1491,8 +1658,10 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 #+END<sub>SRC</sub>
 </p>
 </div>
-</li>
-<li><a id="sec-2-7-19" name="sec-2-7-19"></a>highlight-symbol<br ><div class="outline-text-4" id="text-2-7-19">
+</div>
+<div id="outline-container-sec-2-7-19" class="outline-4">
+<h4 id="sec-2-7-19">highlight-symbol</h4>
+<div class="outline-text-4" id="text-2-7-19">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(highlight-symbol <span style="color: #da70d6;">:fetcher</span> github <span style="color: #da70d6;">:repo</span> <span style="color: #bc8f8f;">"nschum/highlight-symbol.el"</span>))
@@ -1502,10 +1671,12 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 </pre>
 </div>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-20" name="sec-2-7-20"></a>how do i<br ><div class="outline-text-4" id="text-2-7-20">
+<div id="outline-container-sec-2-7-20" class="outline-4">
+<h4 id="sec-2-7-20">how do i</h4>
+<div class="outline-text-4" id="text-2-7-20">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'howdoi)
@@ -1513,18 +1684,22 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-21" name="sec-2-7-21"></a>html-mode<br ><div class="outline-text-4" id="text-2-7-21">
+<div id="outline-container-sec-2-7-21" class="outline-4">
+<h4 id="sec-2-7-21">html-mode</h4>
+<div class="outline-text-4" id="text-2-7-21">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(add-to-list 'ac-modes 'html-mode)
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-22" name="sec-2-7-22"></a>ido-at-point<br ><div class="outline-text-4" id="text-2-7-22">
+<div id="outline-container-sec-2-7-22" class="outline-4">
+<h4 id="sec-2-7-22">ido-at-point</h4>
+<div class="outline-text-4" id="text-2-7-22">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(autoload 'ido-at-point-mode <span style="color: #bc8f8f;">"ido-at-point"</span>)
@@ -1532,9 +1707,11 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-23" name="sec-2-7-23"></a>ido-mode<br ><div class="outline-text-4" id="text-2-7-23">
+<div id="outline-container-sec-2-7-23" class="outline-4">
+<h4 id="sec-2-7-23">ido-mode</h4>
+<div class="outline-text-4" id="text-2-7-23">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq ido-enable-flex-matching t
@@ -1549,9 +1726,11 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-24" name="sec-2-7-24"></a>iedit<br ><div class="outline-text-4" id="text-2-7-24">
+<div id="outline-container-sec-2-7-24" class="outline-4">
+<h4 id="sec-2-7-24">iedit</h4>
+<div class="outline-text-4" id="text-2-7-24">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'iedit)
@@ -1560,9 +1739,11 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-25" name="sec-2-7-25"></a>js2-mode<br ><div class="outline-text-4" id="text-2-7-25">
+<div id="outline-container-sec-2-7-25" class="outline-4">
+<h4 id="sec-2-7-25">js2-mode</h4>
+<div class="outline-text-4" id="text-2-7-25">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'js2-mode)
@@ -1594,9 +1775,11 @@ I use <a href="https://github.com/emacs-helm/helm/wiki#8-helm-m-x">Helm M-x</a> 
 Got most of that from <a href="https://github.com/magnars/.emacs.d/blob/master/setup-js2-mode.el">Magnars' .emacs.d</a>.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-26" name="sec-2-7-26"></a>json-mode<br ><div class="outline-text-4" id="text-2-7-26">
+<div id="outline-container-sec-2-7-26" class="outline-4">
+<h4 id="sec-2-7-26">json-mode</h4>
+<div class="outline-text-4" id="text-2-7-26">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'json-mode)
@@ -1613,16 +1796,20 @@ Got most of that from <a href="https://github.com/magnars/.emacs.d/blob/master/s
 <code>json-mode</code> adds a bit better syntax highlighting for <code>.json</code> files.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-27" name="sec-2-7-27"></a>less<br ><div class="outline-text-4" id="text-2-7-27">
+<div id="outline-container-sec-2-7-27" class="outline-4">
+<h4 id="sec-2-7-27">less</h4>
+<div class="outline-text-4" id="text-2-7-27">
 <p>
 (quelpa 'less-mode)
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-28" name="sec-2-7-28"></a>magit<br ><div class="outline-text-4" id="text-2-7-28">
+<div id="outline-container-sec-2-7-28" class="outline-4">
+<h4 id="sec-2-7-28">magit</h4>
+<div class="outline-text-4" id="text-2-7-28">
 <p>
 Magit is the king of Git interaction for Emacs.
 </p>
@@ -1690,9 +1877,11 @@ When Emacs has been compiled with inotiy support&#x2026;
 &#x2026;the function <code>file-notify-add-watch</code> is bound and we add <code>magit-filenotify-mode</code> to the hook so that file updates get reflected automatically in magit status.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-29" name="sec-2-7-29"></a>markdown<br ><div class="outline-text-4" id="text-2-7-29">
+<div id="outline-container-sec-2-7-29" class="outline-4">
+<h4 id="sec-2-7-29">markdown</h4>
+<div class="outline-text-4" id="text-2-7-29">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'markdown-mode)
@@ -1701,18 +1890,22 @@ When Emacs has been compiled with inotiy support&#x2026;
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-30" name="sec-2-7-30"></a>multiple-cursors<br ><div class="outline-text-4" id="text-2-7-30">
+<div id="outline-container-sec-2-7-30" class="outline-4">
+<h4 id="sec-2-7-30">multiple-cursors</h4>
+<div class="outline-text-4" id="text-2-7-30">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(multiple-cursors <span style="color: #da70d6;">:fetcher</span> github <span style="color: #da70d6;">:repo</span> <span style="color: #bc8f8f;">"magnars/multiple-cursors.el"</span>))
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-31" name="sec-2-7-31"></a>on-screen<br ><div class="outline-text-4" id="text-2-7-31">
+<div id="outline-container-sec-2-7-31" class="outline-4">
+<h4 id="sec-2-7-31">on-screen</h4>
+<div class="outline-text-4" id="text-2-7-31">
 <blockquote>
 <p>
 滚屏有时会让人很眼花, on-screen可以在衔接处加上一条横线, 这样眼睛就不
@@ -1738,10 +1931,12 @@ First we use a <b>Narrow horizontal line</b> instead of the fringe (because that
 The aliases make <code>on-screen</code> a bit more responsive, see <a href="https://github.com/michael-heerdegen/on-screen.el/issues/1">on-screen Github issue</a> for details.
 </p>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-32" name="sec-2-7-32"></a>htmlize<br ><div class="outline-text-4" id="text-2-7-32">
+<div id="outline-container-sec-2-7-32" class="outline-4">
+<h4 id="sec-2-7-32">htmlize</h4>
+<div class="outline-text-4" id="text-2-7-32">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'htmlize)
@@ -1750,9 +1945,11 @@ The aliases make <code>on-screen</code> a bit more responsive, see <a href="http
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-33" name="sec-2-7-33"></a>org-mode<br ><div class="outline-text-4" id="text-2-7-33">
+<div id="outline-container-sec-2-7-33" class="outline-4">
+<h4 id="sec-2-7-33">org-mode</h4>
+<div class="outline-text-4" id="text-2-7-33">
 <p>
 org-mode 真的非常非常非常强大工具,里面有markup, agenda, todo,
 appointment, capture, babel, 光是文档就有278页. 现在流行的神马
@@ -1912,10 +2109,12 @@ wunderlist, day one, astrid, google keep 都弱爆了, 这才是真正的 GTD �
 </pre>
 </div>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-34" name="sec-2-7-34"></a>projectile<br ><div class="outline-text-4" id="text-2-7-34">
+<div id="outline-container-sec-2-7-34" class="outline-4">
+<h4 id="sec-2-7-34">projectile</h4>
+<div class="outline-text-4" id="text-2-7-34">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'projectile)
@@ -1924,9 +2123,11 @@ wunderlist, day one, astrid, google keep 都弱爆了, 这才是真正的 GTD �
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-35" name="sec-2-7-35"></a>rainbow-mode<br ><div class="outline-text-4" id="text-2-7-35">
+<div id="outline-container-sec-2-7-35" class="outline-4">
+<h4 id="sec-2-7-35">rainbow-mode</h4>
+<div class="outline-text-4" id="text-2-7-35">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'rainbow-mode)
@@ -1942,9 +2143,11 @@ wunderlist, day one, astrid, google keep 都弱爆了, 这才是真正的 GTD �
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-36" name="sec-2-7-36"></a>recentf<br ><div class="outline-text-4" id="text-2-7-36">
+<div id="outline-container-sec-2-7-36" class="outline-4">
+<h4 id="sec-2-7-36">recentf</h4>
+<div class="outline-text-4" id="text-2-7-36">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq recentf-save-file (expand-file-name <span style="color: #bc8f8f;">"~/.recentf"</span>))
@@ -1952,9 +2155,11 @@ wunderlist, day one, astrid, google keep 都弱爆了, 这才是真正的 GTD �
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-37" name="sec-2-7-37"></a>robe<br ><div class="outline-text-4" id="text-2-7-37">
+<div id="outline-container-sec-2-7-37" class="outline-4">
+<h4 id="sec-2-7-37">robe</h4>
+<div class="outline-text-4" id="text-2-7-37">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'robe)
@@ -1963,9 +2168,11 @@ wunderlist, day one, astrid, google keep 都弱爆了, 这才是真正的 GTD �
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-38" name="sec-2-7-38"></a>rvm<br ><div class="outline-text-4" id="text-2-7-38">
+<div id="outline-container-sec-2-7-38" class="outline-4">
+<h4 id="sec-2-7-38">rvm</h4>
+<div class="outline-text-4" id="text-2-7-38">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defadvice</span> <span style="color: #0000ff;">inf-ruby-console-auto</span> (before activate-rvm-for-robe activate)
@@ -1973,9 +2180,11 @@ wunderlist, day one, astrid, google keep 都弱爆了, 这才是真正的 GTD �
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-39" name="sec-2-7-39"></a>saveplace<br ><div class="outline-text-4" id="text-2-7-39">
+<div id="outline-container-sec-2-7-39" class="outline-4">
+<h4 id="sec-2-7-39">saveplace</h4>
+<div class="outline-text-4" id="text-2-7-39">
 <blockquote>
 <p>
 Automatically save place in each file. This means when you visit a file, point goes to the last place
@@ -1994,9 +2203,11 @@ where it was when you previously visited the same file.
 I find this quite practical&#x2026;
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-40" name="sec-2-7-40"></a>savehist<br ><div class="outline-text-4" id="text-2-7-40">
+<div id="outline-container-sec-2-7-40" class="outline-4">
+<h4 id="sec-2-7-40">savehist</h4>
+<div class="outline-text-4" id="text-2-7-40">
 <blockquote>
 <p>
 Many editors (e.g. Vim) have the feature of saving minibuffer history to an external file after exit.  This package provides the same feature in Emacs. When set up, it saves recorded minibuffer histories to a file.
@@ -2015,18 +2226,22 @@ Many editors (e.g. Vim) have the feature of saving minibuffer history to an exte
 I'm adding a few variables like the <code>extended-command-history</code> that I would like to persist too.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-41" name="sec-2-7-41"></a>sequential command<br ><div class="outline-text-4" id="text-2-7-41">
+<div id="outline-container-sec-2-7-41" class="outline-4">
+<h4 id="sec-2-7-41">sequential command</h4>
+<div class="outline-text-4" id="text-2-7-41">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa '(sequential-command <span style="color: #da70d6;">:fetcher</span> wiki))
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-42" name="sec-2-7-42"></a>skewer<br ><div class="outline-text-4" id="text-2-7-42">
+<div id="outline-container-sec-2-7-42" class="outline-4">
+<h4 id="sec-2-7-42">skewer</h4>
+<div class="outline-text-4" id="text-2-7-42">
 <blockquote>
 <p>
 skewer可以让你用repl控制你的浏览器页面, 有些像 mozrepl 的感觉但是只是
@@ -2068,9 +2283,11 @@ The following bookmarklet will load skewer on demand on any website:
 Instructions and the source code can be found <a href="https://github.com/skeeto/skewer-mode">on Github</a>.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-43" name="sec-2-7-43"></a>smartparens<br ><div class="outline-text-4" id="text-2-7-43">
+<div id="outline-container-sec-2-7-43" class="outline-4">
+<h4 id="sec-2-7-43">smartparens</h4>
+<div class="outline-text-4" id="text-2-7-43">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'smartparens)
@@ -2158,9 +2375,11 @@ Instructions and the source code can be found <a href="https://github.com/skeeto
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-44" name="sec-2-7-44"></a>smart-mode-line<br ><div class="outline-text-4" id="text-2-7-44">
+<div id="outline-container-sec-2-7-44" class="outline-4">
+<h4 id="sec-2-7-44">smart-mode-line</h4>
+<div class="outline-text-4" id="text-2-7-44">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'smart-mode-line)
@@ -2175,9 +2394,11 @@ Instructions and the source code can be found <a href="https://github.com/skeeto
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-45" name="sec-2-7-45"></a>sgml<br ><div class="outline-text-4" id="text-2-7-45">
+<div id="outline-container-sec-2-7-45" class="outline-4">
+<h4 id="sec-2-7-45">sgml</h4>
+<div class="outline-text-4" id="text-2-7-45">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq sgml-basic-offset 2)
@@ -2185,9 +2406,11 @@ Instructions and the source code can be found <a href="https://github.com/skeeto
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-46" name="sec-2-7-46"></a>slime<br ><div class="outline-text-4" id="text-2-7-46">
+<div id="outline-container-sec-2-7-46" class="outline-4">
+<h4 id="sec-2-7-46">slime</h4>
+<div class="outline-text-4" id="text-2-7-46">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(<span style="color: #a020f0;">when</span> (file-exists-p <span style="color: #bc8f8f;">"~/quicklisp/slime-helper.el"</span>) (load <span style="color: #bc8f8f;">"~/quicklisp/slime-helper.el"</span>))
@@ -2196,9 +2419,11 @@ Instructions and the source code can be found <a href="https://github.com/skeeto
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-47" name="sec-2-7-47"></a>tern<br ><div class="outline-text-4" id="text-2-7-47">
+<div id="outline-container-sec-2-7-47" class="outline-4">
+<h4 id="sec-2-7-47">tern</h4>
+<div class="outline-text-4" id="text-2-7-47">
 <p>
 A JavaScript code analyzer
 非常给力的 javascript 编辑工具, 支持 auto completion, jump to
@@ -2252,10 +2477,12 @@ C-c C-d
 See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </p>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-48" name="sec-2-7-48"></a>textmate<br ><div class="outline-text-4" id="text-2-7-48">
+<div id="outline-container-sec-2-7-48" class="outline-4">
+<h4 id="sec-2-7-48">textmate</h4>
+<div class="outline-text-4" id="text-2-7-48">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'textmate)
@@ -2276,9 +2503,11 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-49" name="sec-2-7-49"></a>uniqify<br ><div class="outline-text-4" id="text-2-7-49">
+<div id="outline-container-sec-2-7-49" class="outline-4">
+<h4 id="sec-2-7-49">uniqify</h4>
+<div class="outline-text-4" id="text-2-7-49">
 <p>
 用buffer的部分路径来区分同名的buffer
 </p>
@@ -2290,10 +2519,12 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
 
-<li><a id="sec-2-7-50" name="sec-2-7-50"></a>wrap-region<br ><div class="outline-text-4" id="text-2-7-50">
+<div id="outline-container-sec-2-7-50" class="outline-4">
+<h4 id="sec-2-7-50">wrap-region</h4>
+<div class="outline-text-4" id="text-2-7-50">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp"><span style="color: #b22222;">;</span><span style="color: #b22222;">(wrap-region-mode t)</span>
@@ -2301,8 +2532,10 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
-<li><a id="sec-2-7-51" name="sec-2-7-51"></a>yaml-mode<br ><div class="outline-text-4" id="text-2-7-51">
+</div>
+<div id="outline-container-sec-2-7-51" class="outline-4">
+<h4 id="sec-2-7-51">yaml-mode</h4>
+<div class="outline-text-4" id="text-2-7-51">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'yaml-mode)
@@ -2310,9 +2543,11 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-52" name="sec-2-7-52"></a>yasnippets<br ><div class="outline-text-4" id="text-2-7-52">
+<div id="outline-container-sec-2-7-52" class="outline-4">
+<h4 id="sec-2-7-52">yasnippets</h4>
+<div class="outline-text-4" id="text-2-7-52">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'yasnippet)
@@ -2321,9 +2556,11 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-53" name="sec-2-7-53"></a>w3m<br ><div class="outline-text-4" id="text-2-7-53">
+<div id="outline-container-sec-2-7-53" class="outline-4">
+<h4 id="sec-2-7-53">w3m</h4>
+<div class="outline-text-4" id="text-2-7-53">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(<span style="color: #a020f0;">when</span> (<span style="color: #a020f0;">require</span> '<span style="color: #5f9ea0;">w3m</span> nil t)
@@ -2365,9 +2602,11 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="sec-2-7-54" name="sec-2-7-54"></a>web-mode<br ><div class="outline-text-4" id="text-2-7-54">
+<div id="outline-container-sec-2-7-54" class="outline-4">
+<h4 id="sec-2-7-54">web-mode</h4>
+<div class="outline-text-4" id="text-2-7-54">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(quelpa 'yasnippet)
@@ -2377,15 +2616,17 @@ See the <a href="http://ternjs.net/">project homepage</a> for more info.
 </pre>
 </div>
 </div>
-</li>
-<li><a id="sec-2-7-55" name="sec-2-7-55"></a>yaml-mode<br ><div class="outline-text-4" id="text-2-7-55">
+</div>
+<div id="outline-container-sec-2-7-55" class="outline-4">
+<h4 id="sec-2-7-55">yaml-mode</h4>
+<div class="outline-text-4" id="text-2-7-55">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(setq yaml-indent-offset 4)
 </pre>
 </div>
 </div>
-</li></ul>
+</div>
 </div>
 <div id="outline-container-sec-2-8" class="outline-3">
 <h3 id="sec-2-8">Theme, Faces, Frame</h3>
@@ -2523,7 +2764,9 @@ For some reason this didn't work with <code>setq</code> so I had to use <code>cu
 <div id="outline-container-sec-2-12" class="outline-3">
 <h3 id="sec-2-12">end</h3>
 <div class="outline-text-3" id="text-2-12">
-</div><ul class="org-ul"><li><a id="sec-2-12-1" name="sec-2-12-1"></a>my-keys-minor-mode<br ><div class="outline-text-4" id="text-2-12-1">
+</div><div id="outline-container-sec-2-12-1" class="outline-4">
+<h4 id="sec-2-12-1">my-keys-minor-mode</h4>
+<div class="outline-text-4" id="text-2-12-1">
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(<span style="color: #a020f0;">define-minor-mode</span> <span style="color: #0000ff;">my-keys-minor-mode</span>
@@ -2533,13 +2776,12 @@ For some reason this didn't work with <code>setq</code> so I had to use <code>cu
 </pre>
 </div>
 </div>
-</li></ul>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p>Author: Jichao Ouyang</p>
-<p>Modified: 2015-03-05 Thu 12:28</p>
 <p><a href="https://travis-ci.org/jcouyang/blog"><img src="https://travis-ci.org/jcouyang/blog.svg?branch=master"></a> with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=1096b1ad01dc8d4309ab448eefc442f1&_render=rss&orgblogurl=https://blog.oyanglul.us/">RSS</a> | <a href="/theindex.html">INDEX</a></p>
 
