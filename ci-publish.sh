@@ -1,4 +1,3 @@
 #!/bin/sh
-export NAME='Jichao Ouyang'
-git clone git@github.com:jcouyang/blog.git -b gh-pages public
+git clone git@github.com:resiworks/resiworks.github.com public
 cask exec emacs --batch -l emacs.el -f org-publish-all

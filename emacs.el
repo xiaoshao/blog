@@ -41,16 +41,16 @@
         :with-author t
         :with-date t
         :html-link-up "/index.html"
-        :html-link-home "https://oyanglul.us/~jichao.ouyang.html"
+        :html-link-home "/~resiworks.html"
         :auto-preamble t
         :html-postamble-format "%a %d" ;write author and date at end
         :auto-sitemap t
-        :sitemap-title "Jichao Ouyang's Blog"
+        :sitemap-title "ResiWorks"
         :sitemap-filename "index.org"
         :sitemap-style list
         :sitemap-sort-files "anti-chronologically"
         :sitemap-sort-folders "mix"
-        :sitemap-file-entry-format "*%t* =%d=" ;write title and date in sitemap
+        :sitemap-file-entry-format "*%t* by /%a/ =%d=" ;write title and date in sitemap
         :sitemap-ignore-case t
         :makeindex t
         :html-head-include-default-style nil
