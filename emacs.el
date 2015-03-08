@@ -50,7 +50,7 @@
         :sitemap-style list
         :sitemap-sort-files "anti-chronologically"
         :sitemap-sort-folders "mix"
-        :sitemap-file-entry-format "*%t* by /%a/ =%d=" ;write title and date in sitemap
+        :sitemap-file-entry-format "*%t* =%d=" ;write title and date in sitemap
         :sitemap-ignore-case t
         :makeindex t
         :html-head-include-default-style nil

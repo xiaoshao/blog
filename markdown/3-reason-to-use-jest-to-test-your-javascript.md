@@ -4,6 +4,8 @@
 
  #+DATE: <2014-10-28 Tue>
 
+ #+AUTHOR: Jichao Ouyang
+
 - [slides](https://rawgit.com/jcouyang/cc0e65e36af9c7c001e2/raw/b100f45ebfe7c196043cb10f967123f9ebde7ffc/1-painless-javascript-testing.html#/28)
 - [source](https://github.com/jcouyang/jest-sample)
 

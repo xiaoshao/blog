@@ -1,5 +1,6 @@
-# 柯里化 currying
-## 为什么要柯里化
+ #+TITLE: 为什么要柯里化
+
+ #+AUTHOR: Jichao Ouyang
 
 还记得 Haskell Curry吗![](http://s3.amazonaws.com/lyah/curry.png)
 
@@ -85,7 +86,7 @@ console.log(concatArray(['1','2','3'], plus(2)))
 1. 处理数组中字符的函数被提取出来, 作为参数传入
 2. 提取成柯里化的函数, 部分配置好后传入, 好处显而易见, 这下接口非常通畅
 无论是外层调用
-```
+```javascript
 concatArray(['1','2','3'], multiple(2))
 ```
 还是内部的 map 函数
