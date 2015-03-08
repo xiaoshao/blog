@@ -41,7 +41,7 @@
         :with-author t
         :with-date t
         :html-link-up "/index.html"
-        :html-link-home "/~resiworks.html"
+        :html-link-home "/resiworks.html"
         :auto-preamble t
         :html-postamble-format "%a %d" ;write author and date at end
         :auto-sitemap t

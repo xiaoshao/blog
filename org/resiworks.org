@@ -1,0 +1,11 @@
+#+TITLE: About Resi
+#+DATE: <2015-03-07 Sat>
+#+AUTHOR: Resi
+
+We are ThoughtWorks Resi Team, we love ruby, scala, js and agile methodology.
+
+* Blog
+https://resiworks.github.com
+
+* Github
+https://github.com/resiworks
