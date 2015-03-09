@@ -17,10 +17,9 @@ install:
 - sudo dpkg -i pandoc-1.13.2-1-amd64.deb
 - curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 - export PATH="/home/travis/.cask/bin:$PATH"
-- wget https://github.com/resiworks/blog/archive/master.zip
-- unzip master.zip "*.md" "*.org"
 script:
 - cask install
+- ./preserve_timestamp.sh
 - ./import.sh
 - ./ci-publish.sh
 cache:
