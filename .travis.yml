@@ -1,8 +1,8 @@
 language: ruby
 env:
   global:
-  - NAME=Jichao Ouyang
-  - EMAIL=oyanglulu@gmail.com
+  - NAME="Nobody Nobody But You, Oh.."
+  - EMAIL=jcouyang@thoughtworks.com
 branches:
   only:
   - master
