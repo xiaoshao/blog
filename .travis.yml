@@ -2,7 +2,7 @@ language: ruby
 env:
   global:
   - NAME="Nobody Nobody But You, Oh.."
-  - EMAIL=jcouyang@thoughtworks.com
+  - EMAIL="jcouyang@thoughtworks.com"
 branches:
   only:
   - master
