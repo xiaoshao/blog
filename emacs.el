@@ -17,6 +17,9 @@
 (setq postamble (with-temp-buffer
                   (insert-file-contents "html/postamble.html")
                   (buffer-string)))
+(setq preamble (with-temp-buffer
+                  (insert-file-contents "html/preamble.html")
+                  (buffer-string)))
 (defun set-org-publish-project-alist ()
   "Set publishing projects for Orgweb and Worg."
   (interactive)
@@ -26,7 +29,7 @@
         :base-directory ,blog-path
         :base-extension "org"
         :html-doctype "html5"
-        :html-head "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"/style/pixyll.css\" />"
+        :html-head "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"/style/main.css\" />"
         :html-html5-fancy t
         :html-postamble ,postamble
         ;; HTML directory
@@ -35,9 +38,8 @@
         :recursive t
         :headline-levels 4
         :section-numbers nil
-        :html-link-up "/index.html"
-        :html-link-home ,config-home-link
-        :auto-preamble t
+        :html-preamble ,preamble
+        :auto-preamble nil
         :auto-sitemap t
         :sitemap-filename "index.org"
         :sitemap-function org-blog-export
