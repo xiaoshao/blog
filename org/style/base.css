@@ -1,0 +1,11 @@
+
+body {
+    color: #333333;
+    background: #fff url("./images/bg.png");
+}
+
+a { color: #009aff; text-decoration: none; }
+
+a:hover { text-decoration: underline }
+
+i { color: #009aff; }

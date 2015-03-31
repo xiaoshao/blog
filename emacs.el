@@ -1,9 +1,11 @@
+(load-file "config.el")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-standard)
+(color-theme-gtk-ide)
 (require 'clojure-mode)
 (clojure-font-lock-setup)
 (require 'org)
+(require 'org-blog)
 (require 'htmlize)
 (setq debug-on-error t)
 (setq blog-path (expand-file-name "org"))
@@ -15,43 +17,36 @@
 (setq postamble (with-temp-buffer
                   (insert-file-contents "html/postamble.html")
                   (buffer-string)))
+(setq preamble (with-temp-buffer
+                  (insert-file-contents "html/preamble.html")
+                  (buffer-string)))
 (defun set-org-publish-project-alist ()
   "Set publishing projects for Orgweb and Worg."
   (interactive)
   (setq org-publish-project-alist
     `(("blog-notes"
-        ;; Directory for source files in org format
+       ;; Directory for source files in org format
         :base-directory ,blog-path
         :base-extension "org"
         :html-doctype "html5"
-        :html-head "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"/style/pixyll.css\" />"
+        :html-head "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"/style/main.css\" />"
         :html-html5-fancy t
         :html-postamble ,postamble
         ;; HTML directory
         :publishing-directory "public"
         :publishing-function org-html-publish-to-html
         :recursive t
-        :headline-levels 3
+        :headline-levels 4
         :section-numbers nil
-        :with-toc t
-        :with-tags t
-        :with-tasks t
-        :with-sub-superscript t
-        :with-timestamps t
-        :with-author t
-        :with-date t
-        :html-link-up "/index.html"
-        :html-link-home "/resiworks.html"
-        :auto-preamble t
-        :html-postamble-format "%a %d" ;write author and date at end
+        :html-preamble ,preamble
+        :auto-preamble nil
         :auto-sitemap t
-        :sitemap-title "ResiWorks"
         :sitemap-filename "index.org"
-        :sitemap-style list
-        :sitemap-sort-files "anti-chronologically"
-        :sitemap-sort-folders "mix"
-        :sitemap-file-entry-format "*%t* =%d=" ;write title and date in sitemap
-        :sitemap-ignore-case t
+        :sitemap-function org-blog-export
+        :blog-entry-format ,config-entry-format
+        :blog-export-dates t
+        :sitemap-date-format ,config-date-format
+        :blog-title ,config-blog-title
         :makeindex t
         :html-head-include-default-style nil
         )
@@ -64,6 +59,18 @@
          :recursive t
          :publishing-function org-publish-attachment
          )
-       ("blog" :components ("blog-notes" "blog-static"))
+       ("rss"
+         :base-directory ,blog-path
+         :base-extension "org"
+         :html-link-home ,config-home-link
+         :html-link-use-abs-url t
+         :rss-extension "xml"
+         :publishing-directory "public"
+         :publishing-function (org-rss-publish-to-rss)
+         :section-numbers nil
+         :exclude ".*"            ;; To exclude all files...
+         :include ("index.org")   ;; ... except index.org.
+         :table-of-contents nil)
+       ("blog" :components ("blog-notes" "blog-static" "rss"))
        )))
 (set-org-publish-project-alist)

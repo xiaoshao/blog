@@ -1,4 +1,8 @@
 language: ruby
+env:
+  global:
+  - NAME="Nobody Nobody But You, Oh.."
+  - EMAIL=jcouyang@thoughtworks.com
 branches:
   only:
   - master
@@ -19,13 +23,8 @@ install:
 - export PATH="/home/travis/.cask/bin:$PATH"
 script:
 - cask install
-- ./preserve_timestamp.sh
-- ./import.sh
-- ./ci-publish.sh
-cache:
-  directories:
-  - elisp
-  - $HOME/.org-timestamps
-  apt: true
+- "./ci/preserve_timestamp.sh"
+- "./ci/import.sh"
+- "./ci/ci-publish.sh"
 after_success:
-- ./ci-push.sh
+- "./ci/ci-push.sh"
