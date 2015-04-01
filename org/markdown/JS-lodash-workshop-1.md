@@ -126,7 +126,21 @@ _(listings)
 .value();
 ```
 
-这里使用了chain方法，chain返回一个封装的对象. 在封装的对象上调用方法会返回封装的对象本身, 直道value方法调用为止。
+其结果为：
+```js
+[
+    ["beijing", 3],
+    ["xian", 7],
+    ["shanghai", 2],
+    ["wuhan", 3],
+    ["chengdu", 4],
+    ["shenzhen", 2]
+]
+```
+
+注意其中的`_(listings)`与`_.chain(listings)`等价，可以把一个普通的js对象包装成了lodash的增强对象，让我们以链式方便地调用各种lodash方法。在包装的对象上调用方法会返回包装的对象本身, 直到`value`方法调用为止。
+
+`value()`方法可以让我们剥开包装，拿到里面经过处理之后的对象。
 
 #### countBy
 
@@ -144,4 +158,3 @@ _(listings)
 ### 通过饼图展示分组结果
 
 选择groupBy或者countBy任意一种方法，将其赋值给groupedData就可以得到最终效果了。
-
