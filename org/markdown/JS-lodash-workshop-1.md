@@ -20,7 +20,7 @@ JS带你飞迎来了第二次workshop，这次的主题是用 [lodash](https://l
 
 输入数据
 
-```javascript
+```js
 var listings = [
     {city: "beijing", price: 3000000},
     {city: "xian", price: 600000},
@@ -64,7 +64,7 @@ var listings = [
 
 实现基本的一个饼图。
 
-```javascript
+```js
 var groupedData = [
     ['Firefox',   45.0],
     ['IE',       26.8],
@@ -115,7 +115,7 @@ $(function () {
 
 #### groupBy
 
-```javascript
+```js
 _(listings)
 .groupBy("city")
 .map(
@@ -130,7 +130,7 @@ _(listings)
 
 #### countBy
 
-```javascript
+```js
 _(listings)
 .countBy(
     function(n) {
