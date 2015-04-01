@@ -43,11 +43,6 @@
     background: rgba(0, 154, 255,0.1);
 }
 
-#content ul {
-    list-style: none;
-    padding-left: 0;
-}
-
 #content ul li a{
     line-height: 2.75rem;
     display: block;
