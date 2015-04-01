@@ -7,7 +7,7 @@
 :HTML_CONTAINER_CLASS: blogentry
 :PUBDATE: %D
 :END:
-by /%a/ - =%d=
+/%d/
 
 %p
 -------
