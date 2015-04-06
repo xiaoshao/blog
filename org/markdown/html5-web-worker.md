@@ -37,35 +37,40 @@ Web Worker目前已被绝大多数主流浏览器所支持，推荐一个网站�
 
 ### 创建Web Worker
 可以用两种方式创建Web Worker，一种是直接传入Web Worker所要运行的JS的URL
-{% highlight js %}
+
+```js
 worker = new Worker("job.js");
-{% endhighlight %}
+```
 
 如果你的浏览器支持文件系统API(`Blob`，`BlobBuilder`)，你还可以加载`<script>`标签中inline的JS代码来创建Web Worker，例如html页面中包含如下标签
-{% highlight html %}
+
+```html
 <script id="worker" type="javascript/worker">
     ...some job...
 </script>
-{% endhighlight %}
+```
 
 可以用下面的JS代码来创建Web Worker
-{% highlight js %}
+
+```js
 blob = new Blob([document.getElementById('worker').innerText], { type: "text/javascript" });
 worker = new Worker(window.URL.createObjectURL(blob));
-{% endhighlight %}
+```
 
 ### 发送消息
 使用postMessage方法给Worker发送消息，可以是字符串或者任何JS对象
-{% highlight js %}
+
+```js
 // someData = "some text";
 // someData = {};
 
 worker.postMessage(someData);
-{% endhighlight %}
+```
 
 ### 监听消息和错误
 主页面可以注册Callback来接收Worker返回的消息或者抛出的错误信息
-{% highlight js %}
+
+```js
 worker.addEventListener("message", messageHandler, true);
 worker.addEventListener("error", errorHandler, true);
 
@@ -76,34 +81,38 @@ function messageHandler(e) {
 function errorHandler(e) {
     console.log(e.message, e);
 }
-{% endhighlight %}
+```
 
 ### 销毁Web Worker
-{% highlight js %}
+
+```js
 worker.terminate();
-{% endhighlight %}
+```
 
 ### Web Worker导入其他JS文件
 如果Web Worker中要执行复杂的处理任务，可能还需要导入其他JS文件
-{% highlight js %}
+
+```js
 importScripts("someLib.js", "otherLib.js");
-{% endhighlight %}
+```
 
 ### 接收主页面消息
 Web Worker同样可以监听主页面发来的消息，方式与主页面监听消息是相同的
-{% highlight js %}
+
+```js
 addEventListener("message", messageHandler, true);
 
 function messageHandler(e) {
     // do something with e.data
 }
-{% endhighlight %}
+```
 
 ### 向主页面发送消息
 Web Worker可以向主页面发送任务运行的结果或中间状态等，其方式与主页面发送消息的方式也是相同的
-{% highlight js %}
+
+```js
 worker.postMessage(someData);
-{% endhighlight %}
+```
 
 ## 举个栗子
 
