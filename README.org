@@ -24,6 +24,12 @@ everthing you want to custom can be added to =html/postamble.html=
 ** 7. Site Search
 using [[http://swiftype.com/]]
 
+* Install
+#+BEGIN_SRC sh
+brew install emacs cask
+cask install
+#+END_SRC
+
 * Setup locally
 #+BEGIN_SRC sh
 ./import.sh
@@ -34,7 +40,7 @@ python -m SimpleHTTPServer
 #+END_SRC
 
 * Live Demo
-[https://blog.oyanglul.us]
+https://blog.oyanglul.us
 
 * OK here is the Magic
 https://github.com/jcouyang/orgpress/blob/master/emacs.el
