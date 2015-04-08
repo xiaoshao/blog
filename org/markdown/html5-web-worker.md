@@ -5,6 +5,8 @@
  #+DATE: <2015-04-05 Sun>
 
  #+AUTHOR: Jia Feng
+ 
+ #+description: Javascript是单线程的。因此，持续时间较长的计算会阻塞UI线程，进而导致用户无法正常使用页面中的功能，并且在大多数浏览器中，除非控制权返回，否则甚至无法打开新的标签页。HTML5 Web Worker正是这类问题的解决方案。
 
 Javascript是单线程的。因此，持续时间较长的计算会阻塞UI线程，进而导致用户无法正常使用页面中的功能，并且在大多数浏览器中，除非控制权返回，否则甚至
 无法打开新的标签页。HTML5 Web Worker正是这类问题的解决方案，Web Worker可以使得web页面具备后台处理能力，它对多线程的支持非常好，因此，使用了
@@ -42,7 +44,7 @@ Web Worker目前已被绝大多数主流浏览器所支持，推荐一个网站�
 worker = new Worker("job.js");
 ```
 
-如果你的浏览器支持文件系统 `API(Blob, BlobBuilder)`，你还可以加载`<script>`标签中inline的JS代码来创建Web Worker，例如html页面中包含如下标签
+如果你的浏览器支持文件系统 `API(Blob, BlobBuilder)` ，你还可以加载 `<script>` 标签中inline的JS代码来创建Web Worker，例如html页面中包含如下标签
 
 ```html
 <script id="worker" type="javascript/worker">
