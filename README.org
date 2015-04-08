@@ -24,6 +24,15 @@ everthing you want to custom can be added to =html/postamble.html=
 ** 7. Site Search
 using [[http://swiftype.com/]]
 
+* Setup locally
+#+BEGIN_SRC sh
+./import.sh
+cask exec  emacs --batch -l emacs.el -f org-publish-all
+cd public
+python -m SimpleHTTPServer
+# open localhost:8000
+#+END_SRC
+
 * Live Demo
 [https://blog.oyanglul.us]
 
