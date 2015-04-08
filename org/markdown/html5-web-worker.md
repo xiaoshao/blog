@@ -22,7 +22,7 @@ Web Worker的另一个用途是监听由后台服务器广播的新闻信息，�
 可能会使用到Web Socket或Server-Sent Event。
 
 ### 限制
-尽管Web Worker功能强大，但也不是万能的，有些事情是Web Worker无能为力的。例如，Web Worker中执行的脚本不能访问该页面的`window`对象，换句话说，
+尽管Web Worker功能强大，但也不是万能的，有些事情是Web Worker无能为力的。例如，Web Worker中执行的脚本不能访问该页面的 `window` 对象，换句话说，
 Web Worker不能直接访问web页面和DOM API。另外，虽然Web Worker不会导致浏览器UI停止响应，但是仍然会消耗CPU周期，导致系统反应速度变慢。
 
 ### 浏览器支持
@@ -42,7 +42,7 @@ Web Worker目前已被绝大多数主流浏览器所支持，推荐一个网站�
 worker = new Worker("job.js");
 ```
 
-如果你的浏览器支持文件系统API(`Blob`，`BlobBuilder`)，你还可以加载`<script>`标签中inline的JS代码来创建Web Worker，例如html页面中包含如下标签
+如果你的浏览器支持文件系统 `API(Blob, BlobBuilder)`，你还可以加载`<script>`标签中inline的JS代码来创建Web Worker，例如html页面中包含如下标签
 
 ```html
 <script id="worker" type="javascript/worker">
