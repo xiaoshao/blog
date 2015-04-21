@@ -97,15 +97,23 @@ pick 3b1d509 Change my blog
 ```
 我们把第二条记录的pick改为r，当我们在保存的时候，就会提醒我们更改comment。
 
+4) 对某个提交添加部分修改
 
+```
+git rebase -i HEAD~3
+pick 862044d This is the inital commit for blog. Zengwei Shao
+edit e25b7fa merged two commits. Zengwei Shao
+pick 787b360 Change my blog
+```
+当我们保存之后会进入一个临时branch，然后我们可以进行某些修改，修改结束之后，我们可以添加我们的修改到第二个提交。
+```
+git add . -p
+git commit --amend
+git rebase --continue
+```
 
-
-
-我们可以看到有六个commands，分别是， pick, reword, edit, squash, fixup, exec;
-
-pick 就是不做任何更改，继续使用这个提交
-reword 修改提交的comment
-edit 
+git rebase 有六个commands，分别是， pick, reword, edit, squash, fixup, exec;在上面除了exec我们都使用过了，exec是在某一个记录之后执行一个shell脚本。
+ 
 
 
 
