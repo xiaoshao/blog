@@ -27,7 +27,7 @@
 ### 原理
 pointer-events属性是用来控制浏览器对mouse/touch事件的响应，包括hover/active， click/tap，以及cursor是不是visible。
 
-设置pointer-events: none之后，将会prevent`<a>` 的click,state以及cursor的option
+设置pointer-events: none之后，将会prevent `<a>`  的click,state以及cursor的option
 
 
 ### 浏览器支持
