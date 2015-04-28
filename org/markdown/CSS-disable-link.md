@@ -13,13 +13,13 @@
 ### 例子
 #### enabled
 
-<a href="http://www.baidu.com">my click is enabled in non-ie</a>
+ <a href="http://www.baidu.com">my click is enabled in non-ie</a>
 
 	<a href="http://www.baidu.com">my click is enabled in non-ie</a>
 	
 #### disabled
 
-<a href="http://www.baidu.com" style="pointer-events: none;">my click is disabled in non-ie</a>
+ <a href="http://www.baidu.com" style="pointer-events: none;">my click is disabled in non-ie</a>
 
 	<a href="http://www.baidu.com" style="pointer-events: none;">my click is disabled in non-ie</a>
 
@@ -45,21 +45,21 @@ Yes    | 3.6     | 4.0		 | 11+
 ### 例子
 #### enabled
 
-<a href="http://www.baidu.com" enabled>my click is enabled in ie</a>
+ <a href="http://www.baidu.com" enabled>my click is enabled in ie</a>
 
 	<a href="http://www.baidu.com" enabled>my click is enabled in ie</a>
 
-<button enabled>My Button is enabled</button>
+ <button enabled>My Button is enabled</button>
 
 	<button enabled>My Button is enabled</button>
 	
 #### disabled
 
-<a href="http://www.baidu.com" disabled>my click is disabled in ie</a>
+ <a href="http://www.baidu.com" disabled>my click is disabled in ie</a>
 
 	<a href="http://www.baidu.com" style="pointer-events: none;">my click is disabled in ie</a>
 
-<button disabled>My Button is disabled</button>
+ <button disabled>My Button is disabled</button>
 
 	<button disabled>My Button is disabled</button>
 
@@ -85,13 +85,13 @@ enabled和disabled属性一般用于`<input>`或者是`<button>` tag上，但是
 ### 例子
 #### enabled
 
-<a href="http://www.baidu.com">my click is enabled in all browsers</a>
+ <a href="http://www.baidu.com">my click is enabled in all browsers</a>
 
 	<a href="http://www.baidu.com">my click is enabled in all browsers</a>
 	
 #### disabled
 
-<a>my click is disabled in all browsers</a>
+ <a>my click is disabled in all browsers</a>
 
 	<a>my click is disabled in all browsers</a>
 
