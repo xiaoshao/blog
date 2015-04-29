@@ -1,13 +1,15 @@
-#+TITLE: jasmine带你飞(1)-----JS BDD框架入门
-#+AUTHOR: Qi Lei
-#+KEYS: test,javascript,BDD
 
-##introduction jasmine.js
+ #+TITLE: jasmine带你飞(1)-----JS BDD框架入门
+
+ #+KEYS: test,javascript,BDD
+
+ #+AUTHOR: Qi Lei
+##introduction jasmine.js##
 
 Jasmine is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.
 
 其他Javascript的测试框架也有很多，e.g：Jasmine，Qunit，JsTestDriver，JSUnit，Mocha等。Jasmine是一套Javascript行为驱动开发框架（BDD），干净简洁，表达力强且易于组织，不依赖于其他任何框架和DOM，可运行于Node.js，浏览器端或移动端。
-##configure environment
+##configure environment##
 To install Jasmine on your local box:
 
 Clone Jasmine -
