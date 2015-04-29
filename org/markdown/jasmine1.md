@@ -1,4 +1,4 @@
-#jasmine带你飞(1)-----JS BDD框架入门
+#+TITLE: jasmine带你飞(1)-----JS BDD框架入门
 #+AUTHOR: Qi Lei
 #+KEYS: test,javascript,BDD
 
