@@ -24,7 +24,7 @@
 ##Tools##
 ###explain###
 mysql自带命令，用于分析query的查找效率
-```
+```sql
 mysql> explain select * from A where price_listing_id=15 and suburb='richmond' and postcode=3121 and state='vic' and brand='residential' and channel='Rent' \G;
 *************************** 1. row ***************************
            id: 1
@@ -40,7 +40,7 @@ possible_keys: A_index2,A_id_fk
 1 row in set (0.26 sec)
 ```
 
-* possible_keys: 所有候选的索引
+* `possible_keys` : 所有候选的索引
 * key: 该查询使用的索引
 * rows: 遍历的行数; **这是优化查询的重要指标**
 
