@@ -17,7 +17,7 @@ Chmod 用来在Linux或者类Unix操作系统上修改文件或者目录的权�
 
 ```
 	chmod [OPTION]... MODE[,MODE]... FILE...
-``
+```
 
 说明：Linux/Unix 的档案权限分为三个等级：档案拥有者、群组和其他。
 
