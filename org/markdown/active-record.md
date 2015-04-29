@@ -36,7 +36,7 @@ ActiveRecord::Base.establish_connection(config['development'])
 
 * `@reserved_connections = ThreadSafe::Cache.new(:initial_capacity => @size)` ：缓存线程号和连接的映射关系
 
-#### 查询
+#### 3. 查询
 
 继承ActiveRecord::Base, 设置 `table_name` 即可完成modle与数据库表的映射
 
@@ -61,6 +61,8 @@ end
 为了支持连接的重用, `connection_pool` 中有三个很重要的数据结构
 
 ![Pool Structure](../imgs/pool_structure.png)
+
+其中：@availables 和 `@reserved_connections` 的conn都是@connections里面的引用.
 
 ####流程
 
@@ -176,3 +178,5 @@ def get_top5
 end
 ```
 把要用可用连接conn做的事情作为block传给 `with_connection` ， `with_connection` 在做完这些事情后，会release连接。
+
+##综上所述： 使用 `with_connection` 完成多线程下的数据库操作。
