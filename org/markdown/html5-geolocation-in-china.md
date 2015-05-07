@@ -6,7 +6,7 @@
 
  #+AUTHOR: Jia Feng
  
- #+description: HTML5 Geolocation API允许用户在Web应用中共享他们的位置，使其能够享受LBS应用所带来的独特魅力。HTML5 Geolocation API的使用方法相当简单（仅限地球^_^）。请求共享位置信息，如果用户同意，浏览器就会返回位置信息（主要是十进制的经纬度），该位置信息是通过支持HTML5地理定位功能的底层设备（如笔记本、手机）提供给浏览器的。
+ #+description: HTML5 Geolocation API允许用户在Web应用中共享他们的位置，使其能够享受LBS应用所带来的独特魅力。HTML5 Geolocation API的使用方法相当简单（仅限地球...）。请求共享位置信息，如果用户同意，浏览器就会返回位置信息（主要是十进制的经纬度），该位置信息是通过支持HTML5地理定位功能的底层设备（如笔记本、手机）提供给浏览器的。
 
 ## 信息来源
 
@@ -68,7 +68,7 @@ navigator.geolocation.watchPosition(successCallback, errorCallback, options);
 var watchId = navigator.geolocation.watchPosition(successCallback, errorCallback, options);
 
 navigator.geolocation.clearWatch(watchId);
-```js
+```
 
 ## 地球坐标，火星坐标，XX坐标
 
