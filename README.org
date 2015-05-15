@@ -1,7 +1,7 @@
 #+TITLE: Simple Org Blog Generator
 #+DATE: <2015-02-05 Thu>
 
-[[https://travis-ci.org/jcouyang/blog][https://api.travis-ci.org/jcouyang/blog.svg]]
+[[https://travis-ci.org/resiworks/blog][https://api.travis-ci.org/resiworks/blog.svg]]
 
 * TL;DR Why another Org Mode Blog Generator
 
