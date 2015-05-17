@@ -37,11 +37,13 @@
         :publishing-function org-html-publish-to-html
         :recursive t
         :headline-levels 4
+        :with-sub-superscript nil
         :section-numbers nil
         :html-preamble ,preamble
         :auto-preamble nil
         :auto-sitemap t
         :sitemap-filename "index.org"
+        :exclude "\!.*\.org"
         :sitemap-function org-blog-export
         :blog-entry-format ,config-entry-format
         :blog-export-dates t
@@ -62,7 +64,7 @@
        ("rss"
          :base-directory ,blog-path
          :base-extension "org"
-         :html-link-home ,config-home-link
+         :html-link-home ,config-base-url
          :html-link-use-abs-url t
          :rss-extension "xml"
          :publishing-directory "public"
