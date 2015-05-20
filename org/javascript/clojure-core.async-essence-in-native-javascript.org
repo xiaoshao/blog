@@ -1,0 +1,11 @@
+#+title: Clojure 风格的 JavaScript 并发编程
+#+description: 用原生 javascript es6 实现类似clojure core.async 风格的异步任务, 拜拜 callback hell
+#+keywords: javascript, es6, clojure, clojurescript, core.async, ecmascript6, golang, go, callback hell
+#+author: Jichao Ouyang
+#+date: <2015-04-28 Tue>
+
+TLDR;
+
+#+HTML: <iframe src="http://git.io/js-csp" width="800" height="600" seamless="true"></iframe>
+
+http://blog.oyanglul.us/javascript/clojure-core.async-essence-in-native-javascript.html
