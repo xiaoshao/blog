@@ -8,4 +8,6 @@ TLDR;
 
 #+HTML: <iframe src="http://git.io/js-csp" width="800" height="600" seamless="true"></iframe>
 
+Long story
+
 http://blog.oyanglul.us/javascript/clojure-core.async-essence-in-native-javascript.html

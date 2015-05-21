@@ -39,8 +39,8 @@
         :headline-levels 4
         :with-sub-superscript nil
         :section-numbers nil
-        :html-preamble ,preamble
         :auto-preamble nil
+        :html-preamble ,preamble
         :auto-sitemap t
         :sitemap-filename "index.org"
         :exclude "\!.*\.org"
