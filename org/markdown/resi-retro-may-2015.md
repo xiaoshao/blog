@@ -6,6 +6,10 @@
 
 # Resi Retro, May 2015
 
+## Date
+
+26th May, 2015
+
 ## 上次回顾的总结
 
 * Resi Blog中的提交变少了
